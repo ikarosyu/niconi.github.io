@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="ikaros">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="ikaros">
+    
+    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+    
+    <meta name="description" content>
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>基于Nginx和Gunicorn自动化部署Django博客网站（心得教程） · ikarosyu</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href="/assets/favicon.ico">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">ikarosyu.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">基于Nginx和Gunicorn自动化部署Django博客网站（心得教程）</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href="/">ikarosyu.</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(https://source.unsplash.com/user/erondu/1600x900)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            基于Nginx和Gunicorn自动化部署Django博客网站（心得教程）
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Python">Python</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">4.7k</span>阅读时长: <span class="post-count reading-time">17 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/02/28</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="基于Nginx和Gunicorn自动化部署Django博客网站（心得教程）"><a href="#基于Nginx和Gunicorn自动化部署Django博客网站（心得教程）" class="headerlink" title="基于Nginx和Gunicorn自动化部署Django博客网站（心得教程）"></a>基于Nginx和Gunicorn自动化部署Django博客网站（心得教程）</h1><h2 id="阅前叨逼叨"><a href="#阅前叨逼叨" class="headerlink" title="阅前叨逼叨"></a>阅前叨逼叨</h2><p>众所周知，基于PHP的网站部署到服务器上，目前有很多一站式的Web管理，比如：宝塔Linux，一键创建网站、FTP、数据库，连免费的SSL能帮你做好了，一键打上证书，成了！简直不要太方便！可我偏偏就选择了用Python+Django来做这个博客，当准备往服务器上部署的时候，各种各样的坑就来了。最后网站倒是上线了，只是感觉头顶凉飕飕的…</p>
+<h2 id="首要的准备"><a href="#首要的准备" class="headerlink" title="首要的准备"></a>首要的准备</h2><p>在这里我们准备使用当下较为流行的Nginx+Gunicorn方式来把我们的Django博客部署到服务器上，然后通过域名来访问我们的网站。</p>
+<p>（提取关键词）服务器、域名，这便是我们做这项工作的首要准备：</p>
+<ol>
+<li>一台可以通过外网访问的服务器。</li>
+<li>一个自己的域名（最好备过案，没有备案也无伤大雅）。</li>
+<li>一颗勇敢的心，遇坑不要怕，你遇到的坑99.9%网上都能够找到答案。</li>
+</ol>
+<p>下面介绍一下这三点准备：</p>
+<h3 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h3><p>现在阿里云、腾讯云都在大力发展这方面的服务，全民建站嘛。而如果你是学生，那么9.9包月不是梦，我购买的：<a href="https://promotion.aliyun.com/ntms/act/campus2018.html" target="_blank" rel="noopener">轻量型应用服务器</a>(刚看了一下，已经9.5了)，1核2G、5M带宽、40G系统SSG盘，对于个人网站已经是绰绰有余了。简简单单的购买成功后，推荐安装系统镜像 Ubuntu 16.04，当然CentOS也能够使用Nginx + Gunicorn来完成部署，只不过系统命令有一些不同，如又需要可以自行研究。<strong>本心得教程完全基于Ubuntu 16.04。</strong></p>
+<p>阿里云、腾讯云其他的服务器土豪请随意挑选，能够满足您的所有要求。</p>
+<p>如果你不是学生，也不是什么什么二代，那么可以购买国外的服务器。有很多很便宜的服务器，我甚至还听说续期不要钱，不过每天都要上服务器使用一次，只要你能坚持…至于如何购买，我就不介绍了，只能说有能力的都买了。这类服务器可能性能就比不上阿里云、腾讯云的，但是你可以用它来搭梯子啊，VPN封的那么厉害，我用SS或者SSR就好了嘛（小声逼逼）。最后系统依旧选择Ubuntu 16.04。</p>
+<h3 id="域名购买"><a href="#域名购买" class="headerlink" title="域名购买"></a>域名购买</h3><p>域名，也就是网域名称系统，是因特网的一项核心服务，它作为可以将域名和<a href="https://baike.baidu.com/item/IP%E5%9C%B0%E5%9D%80" target="_blank" rel="noopener">IP地址</a>相互<a href="https://baike.baidu.com/item/%E6%98%A0%E5%B0%84/410062" target="_blank" rel="noopener">映射</a>的一个分布式数据库，能够使人更方便的访问互联网，而不用去记住能够被机器直接读取的IP地址数串。</p>
+<p>在我们购买阿里云、腾讯云服务器的时候便能够购买域名，如： <a href="https://wanwang.aliyun.com/domain/" target="_blank" rel="noopener">阿里云域名注册系统</a>。我的域名是在购买第一个服务器时加1毛钱送的，第二年续费就的加钱了。有很多很便宜的域名，如果只是为了测试，随便注册一个域名即可，但注意一点根据工信部规定，以下后缀的域名需要实名认证后才能使用：</p>
+<blockquote>
+<p>.cn/.com/.net/.top/.xyz/.vip/.club/.ren/.wang/.shop/.xin/.中国/.信息/.公司/.网络/.广东/.佛山</p>
+</blockquote>
+<p>如果你购买的是上述后缀的域名，意味着需要提交个人的身份资料实名认证后才能正常使用，这通常需要花费几天的时间。<strong>所以如果只为了测试和学习部署的话，最好避开上述后缀的域名。</strong></p>
+<h2 id="搭建服务器"><a href="#搭建服务器" class="headerlink" title="搭建服务器"></a>搭建服务器</h2><p>前提：本心得教程本地使用Window10为环境，服务器端使用Ubuntu 16.04。</p>
+<p>在阿里云购买服务器后，网页自带服务器连接功能，无需使用Xshell等工具连接。但是要连接到服务器首先要进入你的服务器的监控页面，如果嫌麻烦，可下载安装Xshell进行服务器连接。具体操作这里就不赘述了，网上有很多教程能够帮到你。</p>
+<h3 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h3><p>连接到服务器后，一般是以root用户登陆的。而为了网站的安全维护，我们一般不选择在root下部署代码。这里我们新建一个用户Django，并将它加入超级用户组：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#登陆到root用户后，在root用户下新建一个用户，Django是用户名</span><br><span class="line">#因为博客是基于Python的Django包搭建的，所以这里就用了Django作为名字</span><br><span class="line">#你可以使用自己喜欢的名字，不一定要和我一样</span><br><span class="line">root@localhost:~# useradd -m -s /bin/bash django</span><br><span class="line"></span><br><span class="line">#设置用户的密码</span><br><span class="line">#Ubuntu包括CentOS秉承着没有反馈就是最好的反馈，只要没有任何提示，那么你输入的命令就没有问题，不要以为系统什么都没有做</span><br><span class="line">#输密码的时候不会有字符显示，不要以为键盘坏了，正常输入即可</span><br><span class="line">root@localhost:~# passwd django</span><br><span class="line"></span><br><span class="line">#切换到新建的用户</span><br><span class="line">root@localhost:~# su - django</span><br><span class="line"></span><br><span class="line">#这时候@符号前面的用户名就换成了django</span><br><span class="line">django@localhost:~$</span><br></pre></td></tr></table></figure>
+<p>新用户创建成功后，只是为了能够在新用户的地址下部署代码，不一定非要切换到新用户在执行操作，因为有可能是Ubuntu 16.04的原因，虽然我把django加入到了超级用户组。但是有一些命令执行时任然提示权限不够，我目前还没有找到解决的办法，为了你我能够避开这些坑，以下的操作建议任然在root用户下执行，毕竟Ubuntu认为root才是老大…</p>
+<p>下面我们为了避免所使用Ubuntu系统版本太旧而给后面安装软件带来麻烦，我们在使用前先更新一下。运行一下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@localhost:~$ sudo apt-get update</span><br><span class="line">root@localhost:~$ sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
+<p>耐心等待一会儿，更新完成后，我们就开始安装需要用到的软件：Nginx、Pytohn3、Git、pip 和 virtualenv。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root@localhost:~$ root@localhost:~$</span><br><span class="line">root@localhost:~$ sudo apt-get install git python3 python3-pip</span><br><span class="line">root@localhost:~$ sudo pip3 install virtualenv</span><br></pre></td></tr></table></figure>
+<h3 id="解析域名到服务器的IP地址"><a href="#解析域名到服务器的IP地址" class="headerlink" title="解析域名到服务器的IP地址"></a>解析域名到服务器的IP地址</h3><p>在阿里云服务器的管理控制台，能够直接将你已经购买的域名进行解析，具体操作参阿里云域名解析服务。注意：需要备案的域名，大多数要先备案才能够解析，部分地区除外。</p>
+<p>将域名和服务器的 IP 地址绑定后，用户就可以通过在浏览器输入域名来访问服务器了。下图是我的域名和服务器的 IP 地址绑定：</p>
+<p><img src="/2019/02/28/Nginx-Gunicorn/1.jpg" alt></p>
+<h3 id="启动Nginx服务"><a href="#启动Nginx服务" class="headerlink" title="启动Nginx服务"></a>启动Nginx服务</h3><p>Nginx 是用来处理静态文件请求的。比如当我们访问一个博客文章详情页面时，服务器会接收到下面两种请求：</p>
+<ul>
+<li>显示文章的详情信息，这些信息通常保存在数据库里，因此需要调用数据库获取数据。</li>
+<li>图片、css、js 等存在服务器某个文件夹下的静态文件。</li>
+</ul>
+<p>对于前一种请求，博客文章的数据需要借助 Django 从数据库中获取，Nginx 处理不了，它就会把这个请求转发给 Django，让 Django 去处理。而对于后一种静态文件的请求，只需要去这些静态文件所在的文件夹获取，Nginx 就会代为处理，不再麻烦 Django。</p>
+<p>用 Django 去获取静态文件是很耗时的，但 Nginx 可以很高效地处理，这就是我们要使用 Nginx 的原因，当然其功能远不止这些。</p>
+<p>运行下面的命令来启动我们已经安装的Nginx服务：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@localhost:~$ sudo service nginx start</span><br></pre></td></tr></table></figure>
+<p>然后我们在浏览器输入域名，当看到下面的界面说明Nginx启动成功了，</p>
+<p><img src="/2019/02/28/Nginx-Gunicorn/2.jpg" alt></p>
+<h2 id="代码的部署"><a href="#代码的部署" class="headerlink" title="代码的部署"></a>代码的部署</h2><h3 id="部署前的项目配置"><a href="#部署前的项目配置" class="headerlink" title="部署前的项目配置"></a>部署前的项目配置</h3><p>Django 项目中会有一些 CSS、JavaScript 等静态文件，为了能够方便地让 Nginx 处理这些静态文件的请求，我们把项目中的全部静态文件收集到一个统一的目录下，这个目录通常位于 Django 项目的根目录，并且命名为 static。为了完成这些任务，需要在项目的配置文件里做一些必要的配置：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">blogproject/settings.py</span><br><span class="line"></span><br><span class="line"><span class="comment">#其他配置</span></span><br><span class="line"></span><br><span class="line">STATIC_URL = <span class="string">'/static/'</span></span><br><span class="line"><span class="comment"># 加入下面的配置</span></span><br><span class="line">STATIC_ROOT = os.path.join(BASE_DIR, <span class="string">'static'</span>)</span><br></pre></td></tr></table></figure>
+<p>STATIC_ROOT 指明了静态文件的收集目录，即项目根目录（BASE_DIR）下的 static 文件夹。</p>
+<p>为了安全起见，在生产环境下需要关闭 <code>DEBUG</code> 选项以及设置允许访问的域名。打开 settings.py 文件，找到 <code>DEBUG</code> 和 <code>ALLOWED_HOSTS</code> 这两个选项，将它们设置成如下的值：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">blogproject/settings.py</span><br><span class="line"></span><br><span class="line">DEBUG = <span class="literal">False</span></span><br><span class="line">ALLOWED_HOSTS = [<span class="string">'127.0.0.1'</span>, <span class="string">'localhost '</span>, <span class="string">'.ikaros.xin'</span>]</span><br></pre></td></tr></table></figure>
+<p><code>ALLOWED_HOSTS</code> 是允许访问的域名列表，127.0.0.1 和 localhost 是本地访问的域名，.ikaros.xin 是访问服务器的域名（<strong>这里换成你自己的域名</strong>）。域名前加一个点表示允许访问该域名下的子域名，比如 <a href="http://www.ikaros.xin、test.ikaros.xin" target="_blank" rel="noopener">www.ikaros.xin、test.ikaros.xin</a> 等二级域名同样允许访问。如果不加前面的点则只允许访问 ikaros.xin。</p>
+<p>项目还会依赖一些第三方 Python 库，为了方便在服务器上一次性安装，我们将全部依赖写入一个叫 requirements.txt 的文本文件中。激活<strong>本地的虚拟环境</strong>（如果你使用了虚拟环境的话），并进入项目的根目录，运行 <code>pip freeze &gt; requirements.txt</code> 命令，<em>我这里在本地环境win10下使用项目软件Pycharm，在项目终端运行：</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">E:\Python\ikarosblog&gt;</span><br><span class="line">pip freeze &gt; requirements.txt</span><br></pre></td></tr></table></figure>
+<p>这时项目根目录下会生成了一个 requirements.txt 的文本文件，其内容记录了项目的全部依赖。</p>
+<h3 id="上传代码到服务器"><a href="#上传代码到服务器" class="headerlink" title="上传代码到服务器"></a>上传代码到服务器</h3><h4 id="将代码上传到GitHub"><a href="#将代码上传到GitHub" class="headerlink" title="将代码上传到GitHub"></a>将代码上传到GitHub</h4><p>将代码上传到 GitHub 等代码托管平台，这样我们就可以方便地把代码拉取到服务器了。Git 和 GitHub 的使用相信你已经很熟悉了，这里就不赘述过程。如果不知道如何使用地话可以自行百度相关教程，参考：<a href="https://www.cnblogs.com/cxk1995/p/5800196.html" target="_blank" rel="noopener">使用git将项目上传到github（最简单方法）</a></p>
+<p><strong>注意数据库文件不要上传！</strong></p>
+<h4 id="使用FTP上传代码"><a href="#使用FTP上传代码" class="headerlink" title="使用FTP上传代码"></a>使用FTP上传代码</h4><p>如果实在没有使用过GitHub，或者嫌麻烦，我推荐一种懒人方法–使用<strong>WinSCP</strong>。</p>
+<p>WinSCP是一个Windows环境下使用<a href="https://baike.baidu.com/item/SSH/5400403" target="_blank" rel="noopener">SSH</a>的开源图形化SFTP客户端。同时支持SCP协议。它的主要功能就是在本地与远程计算机间安全的复制文件。WinSCP也可以链接其他系统,比如Linux系统。</p>
+<p>自行百度下载WinSCP客户端，连接你的服务器，成功登陆服务器后，你能够以一种图形化的界面看到你服务器的文件和目录。上传代码也非常简单，直接将本地的代码项目拖到WinSCP下对应的服务器目录里就完成了。</p>
+<p>是不是非常简单！同样只是上传代码，WinSCP要比GitHub方便的多。</p>
+<h3 id="设置服务器目录结构"><a href="#设置服务器目录结构" class="headerlink" title="设置服务器目录结构"></a>设置服务器目录结构</h3><p>接下来需要把代码上传到服务器了。我服务器上存放代码的目录结构是这样的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/home/yangxg/</span><br><span class="line">    sites/</span><br><span class="line">        demo.zmrenwu.com/</span><br><span class="line">            env/</span><br><span class="line">            django-blog-tutorial/</span><br></pre></td></tr></table></figure>
+<p>一台服务器可能部署多个网站，所有网站代码都放在 sites/ 目录下。ikaros.xin 这个文件夹以网站的域名命名，便于区分。env/ 是 python 虚拟环境目录。ikarosblog/ 是 Django 博客项目目录。</p>
+<p>因此先来创建这个目录结构，<strong>注意目录名替换为你自己的域名，以后涉及到 ikaros.xin的地方通常都要替换你自己的域名，后面就不再一一指出了</strong>，运行下面的命令:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@localhost:~$ mkdir -p ~/sites/ikaros.xin</span><br></pre></td></tr></table></figure>
+<p>这里 ~ 代表当前用户的 home 目录，即 /home/django/。</p>
+<p>接下来创建虚拟环境，先进入到 ikaros.xin 目录下，然后运行 virtualenv 命令创建虚拟环境：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@localhost:~$ cd ~/sites/ikaros.xin</span><br><span class="line">root@localhost:~/sites/ikaros.xin$ virtualenv --python=python3 env</span><br></pre></td></tr></table></figure>
+<p>注意这里使用 –python=python3 来指定克隆 Python3 的环境。因为 ubuntu 系统默认安装了 Python2，如果不特别指定的话 Virtualenv 默认克隆的是 Python2 的环境。</p>
+<p>检查一下虚拟环境是否创建成功，运行 ls 命令列出当前目录下的文件和文件夹，看到 env 这个文件夹说明虚拟环境创建成功。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@localhost:~/sites/ikaros.xin$ ls</span><br><span class="line">env</span><br></pre></td></tr></table></figure>
+<p>接着再从代码仓库把项目代码拉取过来，把 git clone 后的地址换成你自己的 GitHub 仓库地址！</p>
+<p><strong>或者使用WinSCP拖取项目代码到ikaros.xin文件夹下。</strong></p>
+<p>运行 ls 命令检查一下是否拉取成功：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@localhost:~/sites/ikaros.xin$ ls</span><br><span class="line">env ikarosblog</span><br></pre></td></tr></table></figure>
+<p>我们看到多了一个文件夹ikarosblog（文件夹名称又你的项目文件名或者GitHub仓库名字决定），说明拉取成功。</p>
+<h3 id="安装项目依赖"><a href="#安装项目依赖" class="headerlink" title="安装项目依赖"></a>安装项目依赖</h3><p>激活虚拟环境，再进入到项目根目录，即 requirements.txt 所在的目录，安装项目的全部依赖：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root@localhost:~/sites/ikaros.xin$ source env/bin/activate</span><br><span class="line">(env)root@localhost:~/sites/ikaros.xin$ cd ikarosblog/</span><br><span class="line">(env)root@localhost:~/sites/ikaros.xin/ikarosblog$ pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
+<h3 id="收集静态命令"><a href="#收集静态命令" class="headerlink" title="收集静态命令"></a>收集静态命令</h3><p>虚拟环境下继续运行 <code>python manage.py collectstatic</code> 命令收集静态文件到 static 目录下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(env)root@localhost:~/sites/ikaros.xin/ikarosblog$ python manage.py collectstatic</span><br></pre></td></tr></table></figure>
+<h3 id="生成数据库"><a href="#生成数据库" class="headerlink" title="生成数据库"></a>生成数据库</h3><p>虚拟环境下继续运行 <code>python manage.py migrate</code> 命令创建数据库文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(env)root@localhost:~/sites/ikaros.xin/ikarosblog$ python manage.py migrate</span><br></pre></td></tr></table></figure>
+<p>注意：如果你的网站使用的是MySQL数据库，则需要安装Ubuntu下的MySQL。详情可参考我的另一篇文章：Ubuntu 16.04的MySQL安装与配置</p>
+<h3 id="创建超级用户"><a href="#创建超级用户" class="headerlink" title="创建超级用户"></a>创建超级用户</h3><p>虚拟环境下继续运行 <code>python manage.py createsuperuser</code> 命令创建一个超级用户，方便我们进入 Django 管理后台。这和本地开发时是一样的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(env)root@localhost:~/sites/ikaros.xin/ikarosblog$ python manage.py createsuperuser</span><br></pre></td></tr></table></figure>
+<h2 id="配置-Nginx"><a href="#配置-Nginx" class="headerlink" title="配置 Nginx"></a>配置 Nginx</h2><p>下面我们来配置Nginx用于处理用户请求</p>
+<p>先在服务器的 /etc/nginx/sites-available/ 目录下新建一个配置文件，文件名我一般就设置为域名。写上下面的配置内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">/etc/nginx/sites-available/ikaros.xin</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">    charset utf-8;</span><br><span class="line">    listen 80;</span><br><span class="line">    #服务的域名为 ikaros.xin</span><br><span class="line">    server_name ikaros.xin;</span><br><span class="line"></span><br><span class="line">    location /static &#123;</span><br><span class="line">    #所有URL 带有 /static 的请求均由 Nginx 处理，alias 指明了静态文件的存放目录。</span><br><span class="line">        alias /home/django/sites/ikaros.xin/ikarosblog/static; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">    #其它请求转发给 Django 处理。proxy_pass 后面使用了 unix 套接字，其作用是防止端口冲突，这里就不再详述。</span><br><span class="line">        proxy_set_header Host $host;</span><br><span class="line">        proxy_pass http://unix:/tmp/ikaros.xin.socket;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们可以选择使用vi编辑器在服务器端写文件，vi编辑器的使用方法百度可查，只需要掌握一点点简单的用法就行了。</p>
+<p>当然我们还是可以使用WinSCP来新建文件和写文件，毕竟可视化的界面总比在服务器端写命令好多了，使用WinSCP就和在Windows下一样，这里就不多讲了。</p>
+<p>我们在 /etc/nginx/sites-available/ 放置了配置文件，接下来需要创建一个符号链接，把这个配置文件加入到启用的网站列表中去，被启用网站的目录在 /etc/nginx/sites-enabled/，你可以理解为从 sites-available/ 目录下发送了一个配置文件的快捷方式到 sites-enabled/ 目录。具体命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(env)root@localhost:~/sites/ikaros.xin/ikarosblog$ sudo ln -s /etc/nginx/sites-available/ikaros.xin /etc/nginx/sites-enabled/ikaros.xin</span><br></pre></td></tr></table></figure>
+<p>执行完符号连接后，我们可以发现在 /etc/nginx/sites-available/ 和/etc/nginx/sites-enabled/文件夹下，都各自有两个相同的配置文件一个default文件和一个我们写的ikaros.xin的配置文件。这时我们需要删除系统默认的default文件，不然这个default文件会导致我们自己写的配置文件失效。把default文件删掉就可以正常被nginx代理过去了。</p>
+<h2 id="使用Gunicorn"><a href="#使用Gunicorn" class="headerlink" title="使用Gunicorn"></a>使用Gunicorn</h2><p>Gunicorn 一般用来管理多个进程，有进程挂了Gunicorn 可以把它拉起来，防止服务器长时间停止服务，还可以动态调整 worker 的数量，请求多的时候增加 worker 的数量，请求少的时候减少。</p>
+<p>在虚拟环境下，安装 Gunicorn：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(env)root@localhost:~/sites/ikaros.xin/ikarosblog$ pip install gunicorn</span><br></pre></td></tr></table></figure>
+<p>用 Gunicorn 启动服务器进程：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(env)root@localhost:~/sites/ikaros.xin/ikarosblog$ gunicorn --bind unix:/tmp/ikaros.xin.socket blogproject.wsgi:application</span><br></pre></td></tr></table></figure>
+<p>浏览器输入域名，可以看到访问成功了！</p>
+<h3 id="自动启动-Gunicorn"><a href="#自动启动-Gunicorn" class="headerlink" title="自动启动 Gunicorn"></a>自动启动 Gunicorn</h3><p>现在 Gunicorn 是我们手工启动的，万一哪天服务器崩溃重启了又得重新手工启动。为此我们写一个自动启动脚本，这样当服务器重新启动后，脚本会帮我们重启 Gunicorn。先按 Ctrl + c 停止刚才启动的服务器进程。</p>
+<p>写一个启动脚本，这样当服务器重启后能自动引导 Gunicorn 的启动。首先在/lib/systemd/system/目录下，创建服务脚本 bg.service，必须以service结尾：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># /lib/systemd/system/bg.service</span><br><span class="line"></span><br><span class="line">[Unit]</span><br><span class="line">After=syslog.target network.target remote-fs.target nss-lookup.target</span><br><span class="line">[Service]</span><br><span class="line"># 你的用户</span><br><span class="line">User=django</span><br><span class="line"># 你的目录</span><br><span class="line">WorkingDirectory=/home/django/sites/ikaros.xin/ikarosblog</span><br><span class="line"># gunicorn启动命令</span><br><span class="line">ExecStart=/home/django/sites/ikaros.xin/env/bin/gunicorn --bind unix:/tmp/ikaros.xin.socket blogproject.wsgi:application</span><br><span class="line">Restart=on-failure</span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+<p>然后设置让脚本开机自动启动</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@localhost:~$ sudo systemctl enable bg.service</span><br></pre></td></tr></table></figure>
+<p>拓展 <em>常用命令</em></p>
+<ul>
+<li><em>重新加载service文件：systemctl daemon-reload</em></li>
+<li><em>启动一个服务：systemctl start bg.service</em>  </li>
+<li><em>关闭一个服务：systemctl stop bg.service</em>  </li>
+<li><em>重启一个服务：systemctl restart bg.service</em>  d</li>
+<li><em>显示一个服务的状态</em>：systemctl status bg.service  </li>
+<li><em>在开机时启用一个服务：systemctl enable bg.service</em>  </li>
+<li><em>在开机时禁用一个服务：systemctl disable bg.service</em>  </li>
+<li><em>查看服务是否开机启动：systemctl is-enabled bg.service</em>  </li>
+<li><em>查看已启动的服务列表：systemctl list-unit-files|grep enabled</em></li>
+<li><em>查看启动失败的服务列表：systemctl –failed</em></li>
+</ul>
+<p>以后如果更新了代码，只要运行下面的命令重启一下 Nginx 和 Gunicorn 就可以使新的代码生效了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo service nginx reload</span><br><span class="line">sudo systemctl enable bg.service</span><br></pre></td></tr></table></figure>
+<h2 id="心得总结"><a href="#心得总结" class="headerlink" title="心得总结"></a>心得总结</h2><p>这篇文章是基于我自己部署这个网站后想写的第一篇正式的干货，即时大部分是基于网上的教程，但是经过我的踩坑，已经排除了这篇教程绝大多数的不足之处。</p>
+<p>如果遇到问题，请通过一下方式寻求帮助：</p>
+<ul>
+<li>在下方评论区留言。</li>
+<li>将问题的详情描述以邮件的方式发送至<a href="mailto:ikarosyu@Gmail.com" target="_blank" rel="noopener">ikarosyu@Gmail.com</a>，随缘回复（如果我能看见的话，毕竟穷学生没钱搭SS了）</li>
+</ul>
+<center>– EOF –</center>
+    </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://yoursite.com">ikaros</a>
+            </p><p>原文链接：<a href="http://yoursite.com/2019/02/28/Nginx-Gunicorn/">http://yoursite.com/2019/02/28/Nginx-Gunicorn/</a>
+            </p><p>发表日期：<a href="http://yoursite.com/2019/02/28/Nginx-Gunicorn/">February 28th 2019, 4:09:52 pm</a>
+            </p><p>更新日期：<a href="http://yoursite.com/2019/02/28/Nginx-Gunicorn/">February 28th 2019, 6:14:58 pm</a>
+            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2019/03/04/shilian/" title="如何快速走出失恋？">
+                    <div class="nextTitle">如何快速走出失恋？</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/02/28/congratulate/" title="Congratulate">
+                    <div class="prevTitle">Congratulate</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:ikarosyu@Gmail.com" class="iconfont-archer email" title="email"></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/ikarosyu" class="iconfont-archer github" target="_blank" title="github"></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title="wechat">
+                  
+                  <img class="profile-qr" src="/assets/wechat.png">
+                </span>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer qq" title="qq">
+                  
+                  <img class="profile-qr" src="/assets/qq.jpg">
+                </span>
+            
+        
+    
+        
+    
+        
+            
+                <a href="https://weibo.com/3024293020/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" class="iconfont-archer weibo" target="_blank" title="weibo"></a>
+            
+        
+    
+        
+            
+                <a href="http://www.zhihu.com/people/ikaros-48?utm_source=qq&utm_medium=social&utm_oi=740688299089199104" class="iconfont-archer zhihu" target="_blank" title="zhihu"></a>
+            
+        
+    
+        
+    
+        
+            
+                <a href="https://www.facebook.com/profile.php?id=100028755406982" class="iconfont-archer facebook" target="_blank" title="facebook"></a>
+            
+        
+    
+        
+            
+                <a href="https://twitter.com/ikarosyu" class="iconfont-archer twitter" target="_blank" title="twitter"></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="https://space.bilibili.com/12338622" class="iconfont-archer bilibili" target="_blank" title="bilibili"></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="/atom.xml" class="iconfont-archer rss" target="_blank" title="rss"></a>
+            
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基于Nginx和Gunicorn自动化部署Django博客网站（心得教程）"><span class="toc-number">1.</span> <span class="toc-text">基于Nginx和Gunicorn自动化部署Django博客网站（心得教程）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#阅前叨逼叨"><span class="toc-number">1.1.</span> <span class="toc-text">阅前叨逼叨</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#首要的准备"><span class="toc-number">1.2.</span> <span class="toc-text">首要的准备</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#服务器"><span class="toc-number">1.2.1.</span> <span class="toc-text">服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#域名购买"><span class="toc-number">1.2.2.</span> <span class="toc-text">域名购买</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#搭建服务器"><span class="toc-number">1.3.</span> <span class="toc-text">搭建服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装软件"><span class="toc-number">1.3.1.</span> <span class="toc-text">安装软件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解析域名到服务器的IP地址"><span class="toc-number">1.3.2.</span> <span class="toc-text">解析域名到服务器的IP地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动Nginx服务"><span class="toc-number">1.3.3.</span> <span class="toc-text">启动Nginx服务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码的部署"><span class="toc-number">1.4.</span> <span class="toc-text">代码的部署</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#部署前的项目配置"><span class="toc-number">1.4.1.</span> <span class="toc-text">部署前的项目配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#上传代码到服务器"><span class="toc-number">1.4.2.</span> <span class="toc-text">上传代码到服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#将代码上传到GitHub"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">将代码上传到GitHub</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用FTP上传代码"><span class="toc-number">1.4.2.2.</span> <span class="toc-text">使用FTP上传代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置服务器目录结构"><span class="toc-number">1.4.3.</span> <span class="toc-text">设置服务器目录结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装项目依赖"><span class="toc-number">1.4.4.</span> <span class="toc-text">安装项目依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#收集静态命令"><span class="toc-number">1.4.5.</span> <span class="toc-text">收集静态命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生成数据库"><span class="toc-number">1.4.6.</span> <span class="toc-text">生成数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建超级用户"><span class="toc-number">1.4.7.</span> <span class="toc-text">创建超级用户</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置-Nginx"><span class="toc-number">1.5.</span> <span class="toc-text">配置 Nginx</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用Gunicorn"><span class="toc-number">1.6.</span> <span class="toc-text">使用Gunicorn</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#自动启动-Gunicorn"><span class="toc-number">1.6.1.</span> <span class="toc-text">自动启动 Gunicorn</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#心得总结"><span class="toc-number">1.7.</span> <span class="toc-text">心得总结</span></a></li></ol></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 5
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/04</span><a class="archive-post-title" href="/2019/03/04/troble-4/">致力于此，身体力行</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/04</span><a class="archive-post-title" href="/2019/03/04/shilian/">如何快速走出失恋？</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span><a class="archive-post-title" href="/2019/02/28/Nginx-Gunicorn/">基于Nginx和Gunicorn自动化部署Django博客网站（心得教程）</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/03/10/hello-world/">Hello World</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span><a class="archive-post-title" href="/2019/02/28/congratulate/">Congratulate</a>
+        </li>
+    
+    </ul></div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="日常"><span class="iconfont-archer">&#xe606;</span>日常</span>
+    
+        <span class="sidebar-tag-name" data-tags="人情冷暖"><span class="iconfont-archer">&#xe606;</span>人情冷暖</span>
+    
+        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br>
+    1、请确保node版本大于6.2<br>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "ikaros"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    </body>
+</html>
+
+
