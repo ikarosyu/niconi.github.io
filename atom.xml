@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ikaros.ml/"/>
-  <updated>2019-03-19T11:03:18.320Z</updated>
+  <updated>2019-03-19T12:32:16.915Z</updated>
   <id>http://ikaros.ml/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>记录我的大前端修行1.0-启程计划</title>
+    <link href="http://ikaros.ml/2019/03/19/record-h5/"/>
+    <id>http://ikaros.ml/2019/03/19/record-h5/</id>
+    <published>2019-03-19T12:16:52.000Z</published>
+    <updated>2019-03-19T12:32:16.915Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;上回说到准备去培训公司学习H5大前端，其实到今天已经上了快两周的课程了。&lt;/p&gt;
+&lt;p&gt;本打算每天都记录下所学的知识和心得的，没曾想早九晚九学习完回到家，是真的连电脑都不想碰一下了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;渴望过充实的生活，现在充实就实实在在的摆在眼前了。&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="大前端" scheme="http://ikaros.ml/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="html5" scheme="http://ikaros.ml/tags/html5/"/>
+    
+      <category term="css3" scheme="http://ikaros.ml/tags/css3/"/>
+    
+  </entry>
   
   <entry>
     <title>我的转折点？</title>
