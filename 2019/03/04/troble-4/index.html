@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="人情冷暖,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ikaros" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="博客开了有几天了，本打算先搬过来以前写的技术向干货，再记录一下第一次上班的学习心得和笔记。 但是… 过完年回到成都，到去公司上班，到四天憋出来毕业论文初稿，这段时间，中间一直一直一直穿插着令人着迷又焦灼又向往又苦恼又期盼又失落又令人着迷的个人感情问题。 她不是我的初恋，但我却拿出比初恋多10倍的心思，穷尽了所有去爱。 有时候我也会问自己，她就是那个“对”的人吗？答案是肯定的，我觉得是。 那什么是">
+<meta name="keywords" content="人情冷暖">
+<meta property="og:type" content="article">
+<meta property="og:title" content="致力于此，身体力行">
+<meta property="og:url" content="http://yoursite.com/2019/03/04/troble-4/index.html">
+<meta property="og:site_name" content="ikaros">
+<meta property="og:description" content="博客开了有几天了，本打算先搬过来以前写的技术向干货，再记录一下第一次上班的学习心得和笔记。 但是… 过完年回到成都，到去公司上班，到四天憋出来毕业论文初稿，这段时间，中间一直一直一直穿插着令人着迷又焦灼又向往又苦恼又期盼又失落又令人着迷的个人感情问题。 她不是我的初恋，但我却拿出比初恋多10倍的心思，穷尽了所有去爱。 有时候我也会问自己，她就是那个“对”的人吗？答案是肯定的，我觉得是。 那什么是">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/2019/03/04/troble-4/2.jpg">
+<meta property="og:updated_time" content="2019-03-18T15:47:49.032Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="致力于此，身体力行">
+<meta name="twitter:description" content="博客开了有几天了，本打算先搬过来以前写的技术向干货，再记录一下第一次上班的学习心得和笔记。 但是… 过完年回到成都，到去公司上班，到四天憋出来毕业论文初稿，这段时间，中间一直一直一直穿插着令人着迷又焦灼又向往又苦恼又期盼又失落又令人着迷的个人感情问题。 她不是我的初恋，但我却拿出比初恋多10倍的心思，穷尽了所有去爱。 有时候我也会问自己，她就是那个“对”的人吗？答案是肯定的，我觉得是。 那什么是">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/04/troble-4/2.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'PV0NEHP0TA',
+      apiKey: '043a4d993ae0c5497692bab5c1ef36ee',
+      indexName: 'ikaros',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/03/04/troble-4/">
+
+
+
+
+
+  <title>致力于此，身体力行 | ikaros</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ikaros</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/04/troble-4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ikaros">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ikaros">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">致力于此，身体力行</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-04T11:46:28+08:00">
+                2019-03-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/2019/03/04/troble-4/2.jpg" alt></p>
+<p>博客开了有几天了，本打算先搬过来以前写的技术向干货，再记录一下第一次上班的学习心得和笔记。</p>
+<p>但是…</p>
+<p>过完年回到成都，到去公司上班，到四天憋出来毕业论文初稿，这段时间，中间一直一直一直穿插着令人着迷又焦灼又向往又苦恼又期盼又失落又令人着迷的个人感情问题。</p>
+<p><strong>她不是我的初恋，但我却拿出比初恋多10倍的心思，穷尽了所有去爱。</strong></p>
+<p>有时候我也会问自己，她就是那个“对”的人吗？答案是肯定的，我觉得是。</p>
+<p>那什么是对？什么又是不对？哪有什么天生一对，从喜欢走到爱情，不就是把彼此的不合拍磨合了吗？</p>
+<p><del>有很多话不想放到这里来讲，但是憋在心里特别难受。所以容我矫情一次。</del></p>
+<p><strong>我有点疼，但是我还能忍。</strong>（写到这儿刚好歌单跳到薛之谦的《天分》）</p>
+<p>想得太多，想写的太多，以至于不知从何写起。先分割一下，整理下思绪。</p>
+<hr>
+<blockquote>
+<p>曾今问过一个很有智慧的朋友：我失恋了很难受怎么办？</p>
+<p>朋友反问我：你为什么难受？</p>
+<p>我说：分手了就是很难受啊，我很想他……</p>
+<p>朋友只是淡淡的说：<strong>一般来说，失恋后低落是因为空虚，时间突然空出来了，填满就好了。</strong></p>
+<p>这句话轻描淡写，但我一下子就醒悟了。</p>
+<p><strong>人在闲的时候就是容易胡思乱想，越想越难受，还钻牛角尖。</strong></p>
+<p><strong>我们要学会独处，一个人的时候，可以去公园溜达，健身，看书，做菜等等，让自己充实。</strong></p>
+<p><strong>当你从自己玩的过程中获取到快乐，就会知道一个人也可以很好。当你知道一个人也可以很好的时候，就已经走出失恋了。</strong></p>
+</blockquote>
+<p>摘抄自知乎，对没错又是知乎。我其实可以直接放图的，但是我选择把它一个字一个字打出来，因为有很多话，要一个字一个字刻在心里，不然久了会忘记。</p>
+<p>其实还好吧，我这还说不上失恋，至少我是这么认为的。</p>
+<p>失恋的人，应该是绝望&gt;希望，我现在应该希望多于绝望吧，至少我这么认为的。</p>
+<p><em>她说她最近很丧，她说她要把前任忘掉，她说等她好起来。</em></p>
+<p><em>她说我为什么不早一点出现。</em></p>
+<p><em>她喜欢问我为什么喜欢她，问我喜欢她什么。</em></p>
+<p><em>她后面一直说我是笨蛋。</em></p>
+<p><em>她说我只是被冲昏了头脑。</em></p>
+<p><em>她最近和我说的话变少了。</em></p>
+<p><em>她最近不会和我说话了。</em></p>
+<p>3月2号晚上，还是3月3号凌晨？反正差不多那个时候。在她房间里，把我们想说的说了，把我想问的问了。其实还有很多想说的我没有说，很多想问的并没有问，我怕问过之后，往后就没得问了。最后得到一个“存档”的结果。还是在我要求今晚必须要有个结果下得出的。</p>
+<p>是啊，<strong>存档</strong>。字面上像是《爱情公寓》里，关谷神奇和唐悠悠之间的存档。但他们那时存的吵架时候的档，存档期间一样是情侣吧。而到我这儿的存档，存的是感情的档，存档期间行同路人，连说话都是奢侈的。</p>
+<p>其实我很不相信感情，能存放在哪儿，等时候到了拿出来再用。菜放冰箱里还要用保鲜膜封上呢，何况这感情，我连话都插不上，每天能做的只是帮她烧一下热水袋，早上起床上班前在她房里坐10分钟，我拿什么去维护我们那短短的精贵的感情。</p>
+<p><strong>我怕，我怕到时候我们读档的时候已经变了味儿了。或者根本就拿不出来了。或许一辈子都读不了档。</strong></p>
+<p>我和一个有女朋友的朋友讲，我在存档。他说：这还能存档啊？理解不了。</p>
+<p>我和一个单身朋友讲，我在存档。他说：你这不是备胎吗？我当时就想反驳他，但是仔细想想，好像也有这么个意思。但，是不是又如何呢，我还不是心甘情愿的等。</p>
+<p>对不起，以上的话可能说的有点过分了，但是我觉得<del>说出来</del>写出来，比较好受一些。<strong>对于上面的一切言论，我全权拥有吃了吐的权利，并且随时可以吃了吐。</strong></p>
+<p>再分割一下，思维窃取了。</p>
+<hr>
+<p>嘛~终于回想起自己写的标题了。之前有点跑偏了。</p>
+<p><strong>致力于此，身体力行。</strong></p>
+<p>如同我上一篇转载的博客，这是我人生中必定会经历的过程，我应该选择坦然面对它。</p>
+<p><del>哇，说起来好轻松啊，我他妈自己都不信。</del></p>
+<p>但，我会加油。既然要等，那就不能在这期间让自己退步，如果到了那一天，希望能给她一个更好的自己。</p>
+<p>今天在公司废了一天了，明天一定要拿起我该学习的，下个月完成自己的在学校就定下但一直没有实现的小目标。</p>
+<p>还是那一句话。</p>
+<p><strong>期待与你的再次相遇。</strong></p>
+<p>–END–</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/人情冷暖/" rel="tag"># 人情冷暖</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/04/shilian/" rel="next" title="如何快速走出失恋？">
+                <i class="fa fa-chevron-left"></i> 如何快速走出失恋？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/10/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">ikaros</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ikaros</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
