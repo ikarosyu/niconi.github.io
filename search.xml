@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2019%2F03%2F19%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[我的转折点？]]></title>
     <url>%2F2019%2F03%2F18%2Fturningpoint-5%2F</url>
     <content type="text"><![CDATA[PHP是世界上最好的语言 我始终承认并绝不会反驳这句公认的言论，我也曾一度觉得PHP挺有意思，并认真跟着老师学习了解这门语言，也写了一些有趣的东西。 一直觉得自己是个喜新不厌旧的人，但估计骨子里还是透着喜新厌旧的情愫。 大三的暑假，因为临近毕业，开始思考怎么做毕业设计的事情。没有一点头绪，无头苍蝇样的在网上搜索着各种各种的项目，期待着灵感的涌现。然而现实是灵感没有丝毫的动静，网页上的广告倒是涌现了一大推。 应该是有一条“自学Python巴拉巴拉巴拉”的广告吧 忽然想到，那段时间看求职信息，倒是有很多公司招人的要求上有写：熟悉Python。 确实，Python是一门最近真的很火的语言，优点就在这儿不一一列举了。入门很简单倒是事实。于是那个暑假，我家都没回，在学校偷偷摸摸的住了一个多月，自学Python。 我并不是一个自学能力多强的人，这个词嘴上说着容易，但是没有人引导，单纯是跟着网上的那些教程学习的话，估计也就只是入个门罢了。一个多月倒是有收获，不过用我所学的那点东西，东西开发一个项目还是力所不及的。 到大四综合实训，倒是有成天的时间坐在教室里做项目。把买了将近一年的域名捡起来，自己又买了服务器，一个月时间，用Python Django框架搭了自己博客。本以为拿着它再添一点功能，做个毕业设计应该能行了。 项目都接近尾声了，文章放了一大推，都开始构思还能往自己博客里面放一些什么功能的时候，导师来了一句“毕业设计还是要跟自己专业挂钩哦~” boom~~原地究极阿姆斯特朗螺旋爆炸！ 我，物联网工程专业，跟专业挂钩，意思是，我得加上硬件。那么请告诉我，我一个个人博客系统怎么加硬件，拿头加？ 罢了~罢了~博客功能也就不加了，把功能完善就部署上线了，做综合实训的项目设计还是绰绰有余的。 现在域名也到期了，服务器也到期了，我又可以大声喊出那句“ikaros停运！” 可惜！！！图都没有了，只在写得系统设计与分析的文档里找到当时画的设计图…可惜，真是可惜。 不好意思，我又跑题了。 虽然Python学的半灌水，但是好像也不是想的那么不堪，导师提醒毕设要和专业挂钩后，我立马一转攻势，在网上看了两天的资料，转天就买了《物联网Python开发实战》。你要战，我便战！ 抱着书啃了三四天，书上倒是有一个项目“智能灌溉系统”，嗯~有点意思。硬件需求，树莓派、arduino、杜邦线若干、传感器若干等等等等，嗯~买买买。别忙还有前端界面，嗯~cool~，前端的源码呢？倒是有个githup的地址，打开一看，这全是后端的代码啊，还有硬件里面的源码，说好的前端的界面呢，总不能让我自己写吧，html、css、js这谁顶得住啊！不了不了，这伤身体。 我TMD又不是全栈！ 随后又在网上找了很多项目，最后还是决定单纯的结合树莓派控制摄像头往前端拍照片吧。思路还是比较简单，写起来倒也上手，转手就买了树莓派，两天写了个用树莓派往七牛云服务器里发送定时拍的照片，easy！ 然后，卡住、、、 我的毕设总不能用七牛云做服务器吧，那工作量也太少了吧，我在树莓派里可能就写了100多行代码… 卡卡卡卡，一直卡住。 然后综合实训也结束了，秋招马上要到了，大家都开始忙着找工作了。随波逐流的，我也开始寻觅自己的工作。 最后还是决定找Python方面的工作，一是希望可以在工作中学到点自学学不到的东西，然后帮助完成我的毕设，毕竟，毕业要紧。二来Python倒是个不错的发展方向，现在Ai人工智能炒得这么火，指不定哪天就发达了呢？梦想还是要有的。 最后是，150多家公司来校招，只有4、5个Python岗位。我寻思这是打发叫花子呢？不过我整个人，决定了的事就不会再变了，说找Python我就要Python。 投了4家公司，只有两家有音讯，一家在河北，一面的时候我为了第一印象能好点，问我能否愿意去河南发展，那当然是愿意啦！河南那么好，实习工作还能开5000，还是大数据挖掘，哇简直不得了！另外一家，是川大教授开的公司，做网络安全方向系统的，听起来也不错。 然后，和家里通电话，“河南好远哦，回家好麻烦，人生地不熟的，碰到人贩子怎么办” 得，那就去川大那家公司看看吧，第二天河南那边还和我打电话喊我电话面试，还说想和我聊聊技术，结果被我一句我不想去河南给回绝了。我咋就这么傲呢？ 然后就是，川大公司的笔试，二面，三面，入职。 来了，来了，划重点，我要点题了。 某某顶点公司，我通过Python面试，拿到Offer上面写着Linux研发工程师实习生，拖了我两个月让我年后入职，上班在公司喊我看了一个多月的PHP。 人生总是起起落落落落落落落落落… 说好的Python呢？Linux我也行啊，写网站部署上线的时候也倒腾了几个月的Linux吧，PHP是啥？是嘛，我理解你们的客户端后端系统用PHP写是没有错的，但是能告诉我为啥用的这么老版本的PHP，进公司没两天就然我把mysql改成mysqli。嚯嚯嚯，9102年了…… 对不起，我不该吐槽的。 反正就是，我越做越觉得，我的毕设完了，糟了我可能比不了业了，妈妈救我。 然后就是一个机缘巧合，我顺利辞职了，再见川大，可能再也吃不到食堂4.4二荤的饭了。 经过将近一周的思想挣扎，反思，我这段时间到底干了什么，我以后要做什么，我的出路在哪里，我是不是应该放下一切，痛定思痛做出一些改变，去学习一门新的技术语言。 大道理在脑子里过了千万遍。 成了！到朋友那家培训公司学前端吧，后端可能真的不适合我。 至此，我没有鄙视任何计算机语言，我只是单纯的认为前端是我想要的，是我能够放下一切，不顾一切的去学习的新的知识。 我也将在这个新开的博客里，写下每周学的心得和感想。 愿五个月毕业后，能够功成名就。 ikaros加油！]]></content>
@@ -37,8 +32,8 @@
         <category>日常</category>
       </categories>
       <tags>
-        <tag>share</tag>
         <tag>thoughts</tag>
+        <tag>share</tag>
         <tag>emotion</tag>
       </tags>
   </entry>
@@ -63,8 +58,13 @@
         <category>日常</category>
       </categories>
       <tags>
-        <tag>pictures</tag>
         <tag>share</tag>
+        <tag>pictures</tag>
       </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2019%2F02%2F27%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
   </entry>
 </search>
