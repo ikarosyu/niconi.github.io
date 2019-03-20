@@ -388,80 +388,18 @@
 
       
         
-          
-            <h1 id="day2"><a href="#day2" class="headerlink" title="day2"></a>day2</h1><h2 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h2><p>所谓盒子模型就是把HTML页面中的元素看作是一个矩形的盒子，也就是一个盛装内容的容器。每个矩形都由元素的内容、内边距（padding）、边框（border）和 外边距（margin）组成。</p>
+          <h1 id="day2"><a href="#day2" class="headerlink" title="day2"></a>day2</h1><h2 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h2><p>所谓盒子模型就是把HTML页面中的元素看作是一个矩形的盒子，也就是一个盛装内容的容器。每个矩形都由元素的内容、内边距（padding）、边框（border）和 外边距（margin）组成。</p>
 <p>看透网页布局的本质： <strong>把网页元素比如文字图片等等，放入盒子里面，然后利用css摆放盒子的过程，就是网页布局。</strong></p>
 <h3 id="盒子边框"><a href="#盒子边框" class="headerlink" title="盒子边框"></a>盒子边框</h3><p>边框就是那层皮。 橘子皮。。香蕉皮。。橙子皮。。。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">border : border-width / border-style / border-color</span><br></pre></td></tr></table></figure>
 <p>边框属性—设置边框样式（border-style）</p>
-<p>边框样式用于定义页面中边框的风格，常用属性值如下：</p>
-<ol>
-<li>none：没有边框即忽略所有边框的宽度（默认值）</li>
-<li>solid：边框为单实线(最为常用的)</li>
-<li>dashed：边框为虚线</li>
-<li>dotted：边框为点线</li>
-<li>double：边框为双实线</li>
-</ol>
-<h4 id="表单的边框清零"><a href="#表单的边框清零" class="headerlink" title="表单的边框清零"></a>表单的边框清零</h4><p>因为表单边框颜色浏览器不同，样式不同，因此我们需要清零，自己定义样式和颜色，从而达到浏览器兼容效果。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">input &#123;border: 0;&#125; textarea &#123;border: 0;&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="表格的细线边框"><a href="#表格的细线边框" class="headerlink" title="表格的细线边框"></a>表格的细线边框</h4><p>border-collapse: collapse 边框的合并</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">border-collapse: collapse;  //必要</span><br><span class="line">border-spacing:0;  //可不要</span><br></pre></td></tr></table></figure>
-<h1 id="day3"><a href="#day3" class="headerlink" title="day3"></a>day3</h1><h2 id="元素类型分类"><a href="#元素类型分类" class="headerlink" title="元素类型分类"></a>元素类型分类</h2><h3 id="块状元素-block-element"><a href="#块状元素-block-element" class="headerlink" title="块状元素(block element)"></a>块状元素(block element)</h3><ol>
-<li>块状元素在网页中就是以块的形式显示，所谓块状就是元素显示为矩形区域，常用的块状元素包括div,dl,dt,dd,ol,ul,fieldset,(h1-h6),p,form,hr,colgroup,col,table,tr,td,等；</li>
-<li>默认情况下，块状元素都会占据一行，通俗的说，两个相邻块状元素不会出现并列显示的现象；默认情况下，块状元素按顺序自上而下排列。</li>
-<li>块状元素都可以定义自己的宽度和高度。</li>
-<li>块状元素一般都作为其他元素的容器，它可以容纳其它内联元素和其它块状元素。我们可以把这种容器比喻为一个盒子。</li>
-</ol>
-<h3 id="内联元素或者叫行内元素-inline-element"><a href="#内联元素或者叫行内元素-inline-element" class="headerlink" title="内联元素或者叫行内元素( inline element )"></a>内联元素或者叫行内元素( inline element )</h3><ol>
-<li>常见的内联元素如：a,span,i,em,strong,b等。</li>
-<li>内联元素的表现形式是始终以行内逐个进行显示。</li>
-<li>内联元素没有自己的形状，不能定义它的宽和高,它显示的宽度、高度只能根据所包含内容的高度和宽度来确定，它的最小内容单元也会呈现矩形形状。</li>
-<li>内联元素也会遵循盒模型基本规则，如可以定义padding,border,margin,background等属性，但个别属性值不能正确显示。</li>
-</ol>
-<h3 id="内联块状元素-行内块"><a href="#内联块状元素-行内块" class="headerlink" title="内联块状元素(行内块)"></a>内联块状元素(行内块)</h3><p>内联块状元素（inline-block）就是同时具备内联元素、块状元素的特点，<code>&lt;img&gt;、&lt;input&gt;、&lt;textarea&gt;</code>标签就是这种内联块状标签。</p>
-<p>inline-block元素特点：</p>
-<ul>
-<li>和其他元素都在一行上。</li>
-<li>元素的高度、宽度、行高以及顶和底边距都可设置。</li>
-</ul>
-<h3 id="可变元素"><a href="#可变元素" class="headerlink" title="可变元素"></a>可变元素</h3><p>需要根据上下文关系确定该元素是块元素或者内联元素。</p>
-<h2 id="元素类型的转换"><a href="#元素类型的转换" class="headerlink" title="元素类型的转换"></a>元素类型的转换</h2><p><strong>盒子模型可通过display属性来改变默认的显示类型</strong></p>
-<ul>
-<li>display属性与属性值 (18个属性值)</li>
-</ul>
-<p>属性值：block/inline/inline-block/none/list-item</p>
-<p>作用：块状元素和内联元素之间的转换。</p>
-<p>说明：各属性值的作用</p>
-<ol>
-<li><p>Block块状显示：类似在元素后面添加换行符，也就是说其他元素不能在其后面并列显示。或者就是让元素竖排显示。</p>
-</li>
-<li><p>inline内联显示：在元素后面删除换行符，多个元素可以在一行内并列显示。或者就是让元素横排显示。</p>
-</li>
-<li><p>当元素设置了float属性后，就相当于该元素具备块状元素显示的特点.</p>
-</li>
-<li><p>Inline-block行内块元素显示：元素的内容以块状显示，行内的其他元素显示在同一行。</p>
-</li>
-<li><p>none 此元素不会被显示。</p>
-</li>
-<li><p>list-item:将元素转换成列表。li的默认类型。</p>
-</li>
-<li><p>A、大部分块元素display属性值默认为block，其中列表的默认值为list-litem。</p>
-<p>B、大部分内联元素的display属性值默认为inline，其中img、input默认为inline-block。</p>
-</li>
-</ol>
-<p><strong>注意：行内块元素不能转换成内联元素</strong></p>
-<h2 id="元素垂直居中"><a href="#元素垂直居中" class="headerlink" title="元素垂直居中"></a>元素垂直居中</h2><h2 id="置换和非置换元素的概念"><a href="#置换和非置换元素的概念" class="headerlink" title="置换和非置换元素的概念"></a>置换和非置换元素的概念</h2><p><strong>网页中有类特殊的元素：如img|input|select|textarea|button等，他们被称为可置换元素。</strong>他们区别一般inline元素这些元素拥有内在尺寸,他们可以设置width/height属性。他们的性质同设置了display:inline-block的元素一致。</p>
-<p>置换元素，W3C中给出了定义： 置换元素主要是指 img, input, textarea, select等这类默认就有 CSS 格式化外表范围的元素。进而可知，非置换元素就是除了 img, input, textarea, select等置换元素以外的元素。</p>
-<p>​    a) <strong>置换元素：浏览器根据元素的标签和属性，来决定元素的具体显示内容。</strong>且元素本身一般拥有固有尺寸（宽度，高度，宽高比）的元素，被称之为置换元素。<br>例如：浏览器会根据<code>&lt;img&gt;</code>标签的src属性的值来读取图片信息并显示出来，而如果查看(x)html代码，则看不到图片的实际内容；<code>&lt;input&gt;</code>标签的type属性来决定是显示输入框，还是单选按钮等。html中的<code>&lt;img&gt;、&lt;input&gt;、&lt;textarea&gt;、&lt;select&gt;、</code>都是置换元素。</p>
-<p>置换元素在其显示中生成了框，这也就是有的内联元素能够设置宽高的原因。</p>
-<p>​    b) <strong>非置换元素：html 的大多数元素是非置换元素，即其内容直接表现给用户端。</strong></p>
-<h2 id="拓展-bug-巴啦啦"><a href="#拓展-bug-巴啦啦" class="headerlink" title="拓展\bug\巴啦啦"></a>拓展\bug\巴啦啦</h2><p>1、行内块元素不能转换成内联元素。</p>
-<p>2、在浏览器中加载图片的过程中，图片底部和div之间会有几个像素的距离。<code>vertical-align: buttom;</code></p>
-<p>3、float 可以隐式转换为行内元素。</p>
-<p>4、css鼠标的样式</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cursuer: pointer; //小手样式</span><br><span class="line">curser: default;  //三角形</span><br><span class="line">curser: wait;    //转圈圈</span><br><span class="line">curser: help;    //帮助？</span><br></pre></td></tr></table></figure>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/20/h5-2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

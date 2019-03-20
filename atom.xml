@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ikaros.ml/"/>
-  <updated>2019-03-20T10:29:38.606Z</updated>
+  <updated>2019-03-20T10:32:05.421Z</updated>
   <id>http://ikaros.ml/</id>
   
   <author>
@@ -21,17 +21,15 @@
     <link href="http://ikaros.ml/2019/03/20/h5-2/"/>
     <id>http://ikaros.ml/2019/03/20/h5-2/</id>
     <published>2019-03-20T10:04:20.000Z</published>
-    <updated>2019-03-20T10:29:38.606Z</updated>
+    <updated>2019-03-20T10:32:05.421Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h1 id=&quot;day2&quot;&gt;&lt;a href=&quot;#day2&quot; class=&quot;headerlink&quot; title=&quot;day2&quot;&gt;&lt;/a&gt;day2&lt;/h1&gt;&lt;h2 id=&quot;盒模型&quot;&gt;&lt;a href=&quot;#盒模型&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;h1 id=&quot;day2&quot;&gt;&lt;a href=&quot;#day2&quot; class=&quot;headerlink&quot; title=&quot;day2&quot;&gt;&lt;/a&gt;day2&lt;/h1&gt;&lt;h2 id=&quot;盒模型&quot;&gt;&lt;a href=&quot;#盒模型&quot; class=&quot;headerlink&quot; title=&quot;盒模型&quot;&gt;&lt;/a&gt;盒模型&lt;/h2&gt;&lt;p&gt;所谓盒子模型就是把HTML页面中的元素看作是一个矩形的盒子，也就是一个盛装内容的容器。每个矩形都由元素的内容、内边距（padding）、边框（border）和 外边距（margin）组成。&lt;/p&gt;
+&lt;p&gt;看透网页布局的本质： &lt;strong&gt;把网页元素比如文字图片等等，放入盒子里面，然后利用css摆放盒子的过程，就是网页布局。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;盒子边框&quot;&gt;&lt;a href=&quot;#盒子边框&quot; class=&quot;headerlink&quot; title=&quot;盒子边框&quot;&gt;&lt;/a&gt;盒子边框&lt;/h3&gt;&lt;p&gt;边框就是那层皮。 橘子皮。。香蕉皮。。橙子皮。。。&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;border : border-width / border-style / border-color&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;边框属性—设置边框样式（border-style）&lt;/p&gt;
     
     </summary>
     
