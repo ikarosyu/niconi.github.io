@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ikaros.ml/"/>
-  <updated>2019-03-21T06:26:23.629Z</updated>
+  <updated>2019-03-21T15:29:54.008Z</updated>
   <id>http://ikaros.ml/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>如何用平淡的语气写出虐到让人喘不过气，或让读者感到震撼、震惊的感觉？（转）</title>
+    <title>如何用平淡的语气写出虐到让人喘不过气，或让读者感到震撼、震惊的感觉？</title>
     <link href="http://ikaros.ml/2019/03/21/zhuanzai1/"/>
     <id>http://ikaros.ml/2019/03/21/zhuanzai1/</id>
     <published>2019-03-21T06:18:05.000Z</published>
-    <updated>2019-03-21T06:26:23.629Z</updated>
+    <updated>2019-03-21T15:29:54.008Z</updated>
     
     <summary type="html">
     
@@ -45,11 +45,77 @@
     <link href="http://ikaros.ml/2019/03/20/h5-2/"/>
     <id>http://ikaros.ml/2019/03/20/h5-2/</id>
     <published>2019-03-20T10:04:20.000Z</published>
-    <updated>2019-03-21T03:41:18.712Z</updated>
+    <updated>2019-03-21T15:28:04.243Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;day2&quot;&gt;&lt;a href=&quot;#day2&quot; class=&quot;headerlink&quot; title=&quot;day2&quot;&gt;&lt;/a&gt;day2&lt;/h1&gt;&lt;h2 id=&quot;盒模型&quot;&gt;&lt;a href=&quot;#盒模型&quot; class=&quot;headerlink&quot; title=&quot;盒模型&quot;&gt;&lt;/a&gt;盒模型&lt;/h2&gt;&lt;p&gt;所谓盒子模型就是把HTML页面中的元素看作是一个矩形的盒子，也就是一个盛装内容的容器。每个矩形都由元素的内容、内边距（padding）、边框（border）和 外边距（margin）组成。&lt;/p&gt;
+      &lt;h1 id=&quot;day1&quot;&gt;&lt;a href=&quot;#day1&quot; class=&quot;headerlink&quot; title=&quot;day1&quot;&gt;&lt;/a&gt;day1&lt;/h1&gt;&lt;h2 id=&quot;文本样式属性&quot;&gt;&lt;a href=&quot;#文本样式属性&quot; class=&quot;headerlink&quot; title=&quot;文本样式属性&quot;&gt;&lt;/a&gt;文本样式属性&lt;/h2&gt;&lt;h3 id=&quot;文本修饰-text-decoration&quot;&gt;&lt;a href=&quot;#文本修饰-text-decoration&quot; class=&quot;headerlink&quot; title=&quot;文本修饰 text-decoration&quot;&gt;&lt;/a&gt;文本修饰 text-decoration&lt;/h3&gt;&lt;p&gt;语法：&lt;/p&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;span class=&quot;attribute&quot;&gt;text-decoration&lt;/span&gt;:none/underline/overline/line-through;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;none&lt;/span&gt;:没有修饰&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;underline&lt;/span&gt;:添加下划线&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;overline&lt;/span&gt;:添加上划线&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;line-through&lt;/span&gt;:添加删除线&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;首行缩进-text-indent&quot;&gt;&lt;a href=&quot;#首行缩进-text-indent&quot; class=&quot;headerlink&quot; title=&quot;首行缩进 text-indent&quot;&gt;&lt;/a&gt;首行缩进 text-indent&lt;/h3&gt;&lt;p&gt;语法：&lt;/p&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;span class=&quot;attribute&quot;&gt;text-indent&lt;/span&gt;:数值;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;text-indent可以取负值，可实现隐藏文本，悬挂缩进。text-indent属性只对第一行起作用，若第一行不是文本则没变化。&lt;/p&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;span class=&quot;attribute&quot;&gt;text-indent&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;2em&lt;/span&gt;;&amp;#125; 首行缩进两字符&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;字间距-letter-spacing&quot;&gt;&lt;a href=&quot;#字间距-letter-spacing&quot; class=&quot;headerlink&quot; title=&quot;字间距 letter-spacing&quot;&gt;&lt;/a&gt;字间距 letter-spacing&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;letter-spacing:value&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;控制英文字母或汉字的字距。&lt;/p&gt;
+&lt;h3 id=&quot;文字属性简写-font&quot;&gt;&lt;a href=&quot;#文字属性简写-font&quot; class=&quot;headerlink&quot; title=&quot;文字属性简写 font&quot;&gt;&lt;/a&gt;文字属性简写 font&lt;/h3&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;选择器&amp;#123;&lt;span class=&quot;attribute&quot;&gt;font&lt;/span&gt;: font-style  font-weight  font-size/line-height  font-family;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;使用font属性时，必须按上面语法格式中的顺序书写，不能更换顺序，各个属性以空格隔开。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt;其中不需要设置的属性可以省略（取默认值），但必须保留font-size和font-family属性 ，否则font属性将不起作用。&lt;/p&gt;
+&lt;h2 id=&quot;列表属性&quot;&gt;&lt;a href=&quot;#列表属性&quot; class=&quot;headerlink&quot; title=&quot;列表属性&quot;&gt;&lt;/a&gt;列表属性&lt;/h2&gt;&lt;h3 id=&quot;定义列表符号样式&quot;&gt;&lt;a href=&quot;#定义列表符号样式&quot; class=&quot;headerlink&quot; title=&quot;定义列表符号样式&quot;&gt;&lt;/a&gt;定义列表符号样式&lt;/h3&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;span class=&quot;attribute&quot;&gt;list-style-type&lt;/span&gt;:&lt;span class=&quot;built_in&quot;&gt;disc&lt;/span&gt;(实心圆)/&lt;span class=&quot;built_in&quot;&gt;circle&lt;/span&gt;(空心圆)/&lt;span class=&quot;built_in&quot;&gt;square&lt;/span&gt;(实心方块)/&lt;span class=&quot;built_in&quot;&gt;none&lt;/span&gt;(去掉列表符号);&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;使用图片作为列表符号&quot;&gt;&lt;a href=&quot;#使用图片作为列表符号&quot; class=&quot;headerlink&quot; title=&quot;使用图片作为列表符号&quot;&gt;&lt;/a&gt;使用图片作为列表符号&lt;/h3&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;list-style-image&lt;/span&gt;：&lt;span class=&quot;selector-tag&quot;&gt;url&lt;/span&gt;(所使用图片的路径及全称)；&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;定义列表符号的位置&quot;&gt;&lt;a href=&quot;#定义列表符号的位置&quot; class=&quot;headerlink&quot; title=&quot;定义列表符号的位置&quot;&gt;&lt;/a&gt;定义列表符号的位置&lt;/h3&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;list-style-position:outside(外边)/inside(里边)；&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;去掉列表样式&quot;&gt;&lt;a href=&quot;#去掉列表样式&quot; class=&quot;headerlink&quot; title=&quot;去掉列表样式&quot;&gt;&lt;/a&gt;去掉列表样式&lt;/h3&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;list-style&lt;/span&gt;&lt;span class=&quot;selector-pseudo&quot;&gt;:none&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;背景属性&quot;&gt;&lt;a href=&quot;#背景属性&quot; class=&quot;headerlink&quot; title=&quot;背景属性&quot;&gt;&lt;/a&gt;背景属性&lt;/h2&gt;&lt;h3 id=&quot;背景图片平铺属性&quot;&gt;&lt;a href=&quot;#背景图片平铺属性&quot; class=&quot;headerlink&quot; title=&quot;背景图片平铺属性&quot;&gt;&lt;/a&gt;背景图片平铺属性&lt;/h3&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;span class=&quot;attribute&quot;&gt;background-repeat&lt;/span&gt;:no-repeat/repeat/repeat-x/repeat-y &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;no-repeat&lt;/span&gt;:不平铺&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;repeat&lt;/span&gt;：平铺&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;repeat-x&lt;/span&gt;：横向平铺&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;repeat-y&lt;/span&gt; ：纵向平铺&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;背景图的固定&quot;&gt;&lt;a href=&quot;#背景图的固定&quot; class=&quot;headerlink&quot; title=&quot;背景图的固定&quot;&gt;&lt;/a&gt;背景图的固定&lt;/h3&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;span class=&quot;attribute&quot;&gt;background-attachment&lt;/span&gt;:&lt;span class=&quot;built_in&quot;&gt;scroll&lt;/span&gt;(滚动)/&lt;span class=&quot;built_in&quot;&gt;fixed&lt;/span&gt;(固定);&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;fixed&lt;/span&gt; 固定，不随内容一块滚动；&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;scroll&lt;/span&gt;:随内容一块滚动。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;背景图片的位置&quot;&gt;&lt;a href=&quot;#背景图片的位置&quot; class=&quot;headerlink&quot; title=&quot;背景图片的位置&quot;&gt;&lt;/a&gt;背景图片的位置&lt;/h3&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;span class=&quot;attribute&quot;&gt;background-position&lt;/span&gt;:left/center/right/数值 top/center/bottom/数值;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;水平方向上的对齐方式（left/center/right）或值 垂直方向上的对齐方式(top/center/bottom)或值&lt;/p&gt;
+&lt;p&gt;background-position:值1 值2; 两个值 ：第一个值表示水平位置的值，第二个值：表示垂直的位置。 当两个值都是center的时候写一个值就可以代表的是水平位置和垂直位置 说明：向左方向，向上方向是负值&lt;/p&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;背景属性的缩写语法：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;background&lt;/span&gt;:属性值1 属性值2 属性值3；&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;背景缩写：&lt;span class=&quot;selector-tag&quot;&gt;background&lt;/span&gt;:&lt;span class=&quot;selector-id&quot;&gt;#f00&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;url&lt;/span&gt;（背景图片的路径及全称） &lt;span class=&quot;selector-tag&quot;&gt;no-repeat&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;center&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;top&lt;/span&gt;；&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;浮动&quot;&gt;&lt;a href=&quot;#浮动&quot; class=&quot;headerlink&quot; title=&quot;浮动&quot;&gt;&lt;/a&gt;浮动&lt;/h2&gt;&lt;h3 id=&quot;文档流-普通流-标准流&quot;&gt;&lt;a href=&quot;#文档流-普通流-标准流&quot; class=&quot;headerlink&quot; title=&quot;文档流(普通流/标准流)&quot;&gt;&lt;/a&gt;文档流(普通流/标准流)&lt;/h3&gt;&lt;p&gt;前面我们说过，网页布局的核心，就是用CSS来摆放盒子位置。如何把盒子摆放到合适的位置？&lt;/p&gt;
+&lt;p&gt;CSS的定位机制有3种：普通流（标准流）、浮动和定位。&lt;/p&gt;
+&lt;p&gt;html语言当中另外一个相当重要的概念———-标准流！或者普通流。普通流实际上就是一个网页内标签元素正常从上到下，从左到右排列顺序的意思，比如块级元素会独占一行，行内元素会按顺序依次前后排列；按照这种大前提的布局排列之下绝对不会出现例外的情况叫做普通流布局。&lt;/p&gt;
+&lt;h3 id=&quot;什么是浮动&quot;&gt;&lt;a href=&quot;#什么是浮动&quot; class=&quot;headerlink&quot; title=&quot;什么是浮动&quot;&gt;&lt;/a&gt;什么是浮动&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;元素的浮动是指设置了浮动属性的元素会脱离标准普通流的控制，移动到其父元素中指定位置的过程。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;浮动属性详解&quot;&gt;&lt;a href=&quot;#浮动属性详解&quot; class=&quot;headerlink&quot; title=&quot;浮动属性详解&quot;&gt;&lt;/a&gt;浮动属性详解&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;浮动首先创建包含块的概念（包裹）。就是说， 浮动的元素总是找理它最近的父级元素对齐。但是不会超出内边距的范围。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2019/03/20/h5-2/float1.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;浮动的元素排列位置，跟上一个元素（块级）有关系。如果上一个元素有浮动，则A元素顶部会和上一个元素的顶部对齐；如果上一个元素是标准流，则A元素的顶部会和上一个元素的底部对齐。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2019/03/20/h5-2/float2.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;由2可以推断出，一个父盒子里面的子盒子，如果其中一个子级有浮动的，则其他子级都需要浮动。这样才能一行对齐显示。&lt;/li&gt;
+&lt;li&gt;浮动脱离标准流，不占位置，会影响后面的标准流。浮动只有左右浮动。&lt;/li&gt;
+&lt;li&gt;元素添加浮动后，元素会具有行内块元素的特性。元素的大小完全取决于定义的大小或者默认的内容多少&lt;/li&gt;
+&lt;li&gt;浮动根据元素书写的位置来显示相应的浮动。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;总结： 浮动 —&amp;gt; 浮漏特&lt;/p&gt;
+&lt;p&gt;浮： 加了浮动的元素盒子是浮起来的，漂浮在其他的标准流盒子上面。&lt;/p&gt;
+&lt;p&gt;漏： 加了浮动的盒子，不占位置的，它浮起来了，它原来的位置漏 给了标准流的盒子。&lt;/p&gt;
+&lt;p&gt;特： 特别注意，这是特殊的使用，有很多的不好处，使用要谨慎。&lt;/p&gt;
+&lt;h2 id=&quot;清除浮动&quot;&gt;&lt;a href=&quot;#清除浮动&quot; class=&quot;headerlink&quot; title=&quot;清除浮动&quot;&gt;&lt;/a&gt;清除浮动&lt;/h2&gt;&lt;h3 id=&quot;为什么要清除浮动&quot;&gt;&lt;a href=&quot;#为什么要清除浮动&quot; class=&quot;headerlink&quot; title=&quot;为什么要清除浮动&quot;&gt;&lt;/a&gt;为什么要清除浮动&lt;/h3&gt;&lt;p&gt;由于浮动元素不再占用原文档流的位置，所以它会对后面的元素排版产生影响，为了解决这些问题，此时就需要在该元素中清除浮动。&lt;/p&gt;
+&lt;p&gt;如果浮动一开始就是一个美丽的错误，那么请用正确的方法挽救它。&lt;/p&gt;
+&lt;h3 id=&quot;清除浮动的本质&quot;&gt;&lt;a href=&quot;#清除浮动的本质&quot; class=&quot;headerlink&quot; title=&quot;清除浮动的本质&quot;&gt;&lt;/a&gt;清除浮动的本质&lt;/h3&gt;&lt;p&gt;清除浮动主要为了解决父级元素因为子级浮动引起内部高度为 0 的问题。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2019/03/20/h5-2/float3.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2019/03/20/h5-2/float5.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;h3 id=&quot;清除浮动的方法（重点）&quot;&gt;&lt;a href=&quot;#清除浮动的方法（重点）&quot; class=&quot;headerlink&quot; title=&quot;清除浮动的方法（重点）&quot;&gt;&lt;/a&gt;清除浮动的方法（重点）&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;1、额外标签法&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;是W3C推荐的做法是通过在浮动元素末尾添加一个空的标签例如 &amp;lt;div style=”clear:both”&amp;gt;&amp;lt;/div&amp;gt;，或则其他标签br等亦可。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;优点：&lt;/strong&gt; 通俗易懂，书写方便&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;缺点：&lt;/strong&gt; 添加许多无意义的标签，结构化较差。 我只能说，w3c你推荐的方法我不接受，你不值得拥有。。。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2、父级添加 overflow 属性方法&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;可以给父级添加： overflow为 hidden|auto|scroll 都可以实现。可以先定义一个类名，然后把定义好的类名赋给浮动元素的父级元素。 语法：.clear{overflow:hidden;}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;优点：&lt;/strong&gt; 代码简洁&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;缺点：&lt;/strong&gt; 内容增多时候容易造成不会自动换行导致内容被隐藏掉，无法显示需要溢出的元素。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3、使用after伪元素清除浮动&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;使用方法：&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.clearfix&lt;/span&gt;&lt;span class=&quot;selector-pseudo&quot;&gt;:after&lt;/span&gt; &amp;#123;  &lt;span class=&quot;attribute&quot;&gt;content&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;.&quot;&lt;/span&gt;; &lt;span class=&quot;attribute&quot;&gt;display&lt;/span&gt;: block; &lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; &lt;span class=&quot;attribute&quot;&gt;clear&lt;/span&gt;: both; &lt;span class=&quot;attribute&quot;&gt;visibility&lt;/span&gt;: hidden;  &amp;#125;   &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;.clearfix &amp;#123;*zoom: 1;&amp;#125;   ie6、7 专有&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;优点： 符合闭合浮动思想 结构语义化正确&lt;/p&gt;
+&lt;p&gt;缺点： 由于IE6-7不支持:after，使用 zoom:1触发 IE6-7 的特有属性 hasLayout&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4、使用before和after双伪元素清除浮动&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;使用方法：&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.clearfix&lt;/span&gt;&lt;span class=&quot;selector-pseudo&quot;&gt;:before&lt;/span&gt;,&lt;span class=&quot;selector-class&quot;&gt;.clearfix&lt;/span&gt;&lt;span class=&quot;selector-pseudo&quot;&gt;:after&lt;/span&gt;&amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;           &lt;span class=&quot;attribute&quot;&gt;content&lt;/span&gt;:&lt;span class=&quot;string&quot;&gt;&quot;.&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;           &lt;span class=&quot;attribute&quot;&gt;display&lt;/span&gt;:table;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.clearfix&lt;/span&gt;&lt;span class=&quot;selector-pseudo&quot;&gt;:after&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;span class=&quot;attribute&quot;&gt;clear&lt;/span&gt;:both;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;.clearfix&amp;#123;*zoom:1;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;优点： 代码更简洁&lt;/p&gt;
+&lt;p&gt;缺点： 由于IE6-7不支持:after，使用 zoom:1触发 IE6-7 的特有属性 hasLayout。&lt;/p&gt;
+&lt;h1 id=&quot;day2&quot;&gt;&lt;a href=&quot;#day2&quot; class=&quot;headerlink&quot; title=&quot;day2&quot;&gt;&lt;/a&gt;day2&lt;/h1&gt;&lt;h2 id=&quot;盒模型&quot;&gt;&lt;a href=&quot;#盒模型&quot; class=&quot;headerlink&quot; title=&quot;盒模型&quot;&gt;&lt;/a&gt;盒模型&lt;/h2&gt;&lt;p&gt;所谓盒子模型就是把HTML页面中的元素看作是一个矩形的盒子，也就是一个盛装内容的容器。每个矩形都由元素的内容、内边距（padding）、边框（border）和 外边距（margin）组成。&lt;/p&gt;
 &lt;p&gt;看透网页布局的本质： &lt;strong&gt;把网页元素比如文字图片等等，放入盒子里面，然后利用css摆放盒子的过程，就是网页布局。&lt;/strong&gt;&lt;/p&gt;
 &lt;h3 id=&quot;盒子边框&quot;&gt;&lt;a href=&quot;#盒子边框&quot; class=&quot;headerlink&quot; title=&quot;盒子边框&quot;&gt;&lt;/a&gt;盒子边框&lt;/h3&gt;&lt;p&gt;边框就是那层皮。 橘子皮。。香蕉皮。。橙子皮。。。&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;border : border-width / border-style / border-color&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -143,11 +209,11 @@
     <link href="http://ikaros.ml/2019/03/04/troble-4/"/>
     <id>http://ikaros.ml/2019/03/04/troble-4/</id>
     <published>2019-03-04T03:46:28.000Z</published>
-    <updated>2019-03-19T11:02:45.423Z</updated>
+    <updated>2019-03-21T15:31:03.019Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;/2019/03/04/troble-4/2.jpg&quot; alt&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;/2019/03/04/troble-4/2.JPG&quot; alt&gt;&lt;/p&gt;
 &lt;p&gt;博客开了有几天了，本打算先搬过来以前写的技术向干货，再记录一下第一次上班的学习心得和笔记。&lt;/p&gt;
 &lt;p&gt;但是…&lt;/p&gt;
 &lt;p&gt;过完年回到成都，到去公司上班，到四天憋出来毕业论文初稿，这段时间，中间一直一直一直穿插着令人着迷又焦灼又向往又苦恼又期盼又失落又令人着迷的个人感情问题。&lt;/p&gt;
@@ -158,9 +224,9 @@
       <category term="日常" scheme="http://ikaros.ml/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
-      <category term="thoughts" scheme="http://ikaros.ml/tags/thoughts/"/>
-    
       <category term="emotion" scheme="http://ikaros.ml/tags/emotion/"/>
+    
+      <category term="thoughts" scheme="http://ikaros.ml/tags/thoughts/"/>
     
   </entry>
   
@@ -188,9 +254,9 @@
     
       <category term="share" scheme="http://ikaros.ml/tags/share/"/>
     
-      <category term="thoughts" scheme="http://ikaros.ml/tags/thoughts/"/>
-    
       <category term="emotion" scheme="http://ikaros.ml/tags/emotion/"/>
+    
+      <category term="thoughts" scheme="http://ikaros.ml/tags/thoughts/"/>
     
   </entry>
   

@@ -79,18 +79,23 @@
 
 
 
-<meta name="description" content="day2盒模型所谓盒子模型就是把HTML页面中的元素看作是一个矩形的盒子，也就是一个盛装内容的容器。每个矩形都由元素的内容、内边距（padding）、边框（border）和 外边距（margin）组成。 看透网页布局的本质： 把网页元素比如文字图片等等，放入盒子里面，然后利用css摆放盒子的过程，就是网页布局。 盒子边框边框就是那层皮。 橘子皮。。香蕉皮。。橙子皮。。。 1border : bor">
+<meta name="description" content="day1文本样式属性文本修饰 text-decoration语法： 12345&amp;#123;text-decoration:none/underline/overline/line-through;&amp;#125;none:没有修饰underline:添加下划线overline:添加上划线line-through:添加删除线 首行缩进 text-indent语法： 1&amp;#123;text-indent:">
 <meta name="keywords" content="html5,css3">
 <meta property="og:type" content="article">
 <meta property="og:title" content="记录我的大前端修行2.1">
 <meta property="og:url" content="http://ikaros.ml/2019/03/20/h5-2/index.html">
 <meta property="og:site_name" content="ikaros">
-<meta property="og:description" content="day2盒模型所谓盒子模型就是把HTML页面中的元素看作是一个矩形的盒子，也就是一个盛装内容的容器。每个矩形都由元素的内容、内边距（padding）、边框（border）和 外边距（margin）组成。 看透网页布局的本质： 把网页元素比如文字图片等等，放入盒子里面，然后利用css摆放盒子的过程，就是网页布局。 盒子边框边框就是那层皮。 橘子皮。。香蕉皮。。橙子皮。。。 1border : bor">
+<meta property="og:description" content="day1文本样式属性文本修饰 text-decoration语法： 12345&amp;#123;text-decoration:none/underline/overline/line-through;&amp;#125;none:没有修饰underline:添加下划线overline:添加上划线line-through:添加删除线 首行缩进 text-indent语法： 1&amp;#123;text-indent:">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-21T03:41:18.712Z">
+<meta property="og:image" content="http://ikaros.ml/2019/03/20/h5-2/float1.jpg">
+<meta property="og:image" content="http://ikaros.ml/2019/03/20/h5-2/float2.jpg">
+<meta property="og:image" content="http://ikaros.ml/2019/03/20/h5-2/float3.jpg">
+<meta property="og:image" content="http://ikaros.ml/2019/03/20/h5-2/float5.jpg">
+<meta property="og:updated_time" content="2019-03-21T15:28:04.243Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记录我的大前端修行2.1">
-<meta name="twitter:description" content="day2盒模型所谓盒子模型就是把HTML页面中的元素看作是一个矩形的盒子，也就是一个盛装内容的容器。每个矩形都由元素的内容、内边距（padding）、边框（border）和 外边距（margin）组成。 看透网页布局的本质： 把网页元素比如文字图片等等，放入盒子里面，然后利用css摆放盒子的过程，就是网页布局。 盒子边框边框就是那层皮。 橘子皮。。香蕉皮。。橙子皮。。。 1border : bor">
+<meta name="twitter:description" content="day1文本样式属性文本修饰 text-decoration语法： 12345&amp;#123;text-decoration:none/underline/overline/line-through;&amp;#125;none:没有修饰underline:添加下划线overline:添加上划线line-through:添加删除线 首行缩进 text-indent语法： 1&amp;#123;text-indent:">
+<meta name="twitter:image" content="http://ikaros.ml/2019/03/20/h5-2/float1.jpg">
 
 
 
@@ -389,7 +394,73 @@
       
 
       
-        <h1 id="day2"><a href="#day2" class="headerlink" title="day2"></a>day2</h1><h2 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h2><p>所谓盒子模型就是把HTML页面中的元素看作是一个矩形的盒子，也就是一个盛装内容的容器。每个矩形都由元素的内容、内边距（padding）、边框（border）和 外边距（margin）组成。</p>
+        <h1 id="day1"><a href="#day1" class="headerlink" title="day1"></a>day1</h1><h2 id="文本样式属性"><a href="#文本样式属性" class="headerlink" title="文本样式属性"></a>文本样式属性</h2><h3 id="文本修饰-text-decoration"><a href="#文本修饰-text-decoration" class="headerlink" title="文本修饰 text-decoration"></a>文本修饰 text-decoration</h3><p>语法：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attribute">text-decoration</span>:none/underline/overline/line-through;&#125;</span><br><span class="line"><span class="selector-tag">none</span>:没有修饰</span><br><span class="line"><span class="selector-tag">underline</span>:添加下划线</span><br><span class="line"><span class="selector-tag">overline</span>:添加上划线</span><br><span class="line"><span class="selector-tag">line-through</span>:添加删除线</span><br></pre></td></tr></table></figure>
+<h3 id="首行缩进-text-indent"><a href="#首行缩进-text-indent" class="headerlink" title="首行缩进 text-indent"></a>首行缩进 text-indent</h3><p>语法：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attribute">text-indent</span>:数值;&#125;</span><br></pre></td></tr></table></figure>
+<p>text-indent可以取负值，可实现隐藏文本，悬挂缩进。text-indent属性只对第一行起作用，若第一行不是文本则没变化。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attribute">text-indent</span>:<span class="number">2em</span>;&#125; 首行缩进两字符</span><br></pre></td></tr></table></figure>
+<h3 id="字间距-letter-spacing"><a href="#字间距-letter-spacing" class="headerlink" title="字间距 letter-spacing"></a>字间距 letter-spacing</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;letter-spacing:value&#125;</span><br></pre></td></tr></table></figure>
+<p>控制英文字母或汉字的字距。</p>
+<h3 id="文字属性简写-font"><a href="#文字属性简写-font" class="headerlink" title="文字属性简写 font"></a>文字属性简写 font</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">选择器&#123;<span class="attribute">font</span>: font-style  font-weight  font-size/line-height  font-family;&#125;</span><br></pre></td></tr></table></figure>
+<p>使用font属性时，必须按上面语法格式中的顺序书写，不能更换顺序，各个属性以空格隔开。</p>
+<p><strong>注意：</strong>其中不需要设置的属性可以省略（取默认值），但必须保留font-size和font-family属性 ，否则font属性将不起作用。</p>
+<h2 id="列表属性"><a href="#列表属性" class="headerlink" title="列表属性"></a>列表属性</h2><h3 id="定义列表符号样式"><a href="#定义列表符号样式" class="headerlink" title="定义列表符号样式"></a>定义列表符号样式</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attribute">list-style-type</span>:<span class="built_in">disc</span>(实心圆)/<span class="built_in">circle</span>(空心圆)/<span class="built_in">square</span>(实心方块)/<span class="built_in">none</span>(去掉列表符号);&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="使用图片作为列表符号"><a href="#使用图片作为列表符号" class="headerlink" title="使用图片作为列表符号"></a>使用图片作为列表符号</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">list-style-image</span>：<span class="selector-tag">url</span>(所使用图片的路径及全称)；</span><br></pre></td></tr></table></figure>
+<h3 id="定义列表符号的位置"><a href="#定义列表符号的位置" class="headerlink" title="定义列表符号的位置"></a>定义列表符号的位置</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list-style-position:outside(外边)/inside(里边)；</span><br></pre></td></tr></table></figure>
+<h3 id="去掉列表样式"><a href="#去掉列表样式" class="headerlink" title="去掉列表样式"></a>去掉列表样式</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">list-style</span><span class="selector-pseudo">:none</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="背景属性"><a href="#背景属性" class="headerlink" title="背景属性"></a>背景属性</h2><h3 id="背景图片平铺属性"><a href="#背景图片平铺属性" class="headerlink" title="背景图片平铺属性"></a>背景图片平铺属性</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attribute">background-repeat</span>:no-repeat/repeat/repeat-x/repeat-y &#125;</span><br><span class="line"><span class="selector-tag">no-repeat</span>:不平铺</span><br><span class="line"><span class="selector-tag">repeat</span>：平铺</span><br><span class="line"><span class="selector-tag">repeat-x</span>：横向平铺</span><br><span class="line"><span class="selector-tag">repeat-y</span> ：纵向平铺</span><br></pre></td></tr></table></figure>
+<h3 id="背景图的固定"><a href="#背景图的固定" class="headerlink" title="背景图的固定"></a>背景图的固定</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attribute">background-attachment</span>:<span class="built_in">scroll</span>(滚动)/<span class="built_in">fixed</span>(固定);&#125;</span><br><span class="line"><span class="selector-tag">fixed</span> 固定，不随内容一块滚动；</span><br><span class="line"><span class="selector-tag">scroll</span>:随内容一块滚动。</span><br></pre></td></tr></table></figure>
+<h3 id="背景图片的位置"><a href="#背景图片的位置" class="headerlink" title="背景图片的位置"></a>背景图片的位置</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attribute">background-position</span>:left/center/right/数值 top/center/bottom/数值;&#125;</span><br></pre></td></tr></table></figure>
+<p>水平方向上的对齐方式（left/center/right）或值 垂直方向上的对齐方式(top/center/bottom)或值</p>
+<p>background-position:值1 值2; 两个值 ：第一个值表示水平位置的值，第二个值：表示垂直的位置。 当两个值都是center的时候写一个值就可以代表的是水平位置和垂直位置 说明：向左方向，向上方向是负值</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">背景属性的缩写语法：</span><br><span class="line"><span class="selector-tag">background</span>:属性值1 属性值2 属性值3；</span><br><span class="line">背景缩写：<span class="selector-tag">background</span>:<span class="selector-id">#f00</span> <span class="selector-tag">url</span>（背景图片的路径及全称） <span class="selector-tag">no-repeat</span> <span class="selector-tag">center</span> <span class="selector-tag">top</span>；</span><br></pre></td></tr></table></figure>
+<h2 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h2><h3 id="文档流-普通流-标准流"><a href="#文档流-普通流-标准流" class="headerlink" title="文档流(普通流/标准流)"></a>文档流(普通流/标准流)</h3><p>前面我们说过，网页布局的核心，就是用CSS来摆放盒子位置。如何把盒子摆放到合适的位置？</p>
+<p>CSS的定位机制有3种：普通流（标准流）、浮动和定位。</p>
+<p>html语言当中另外一个相当重要的概念———-标准流！或者普通流。普通流实际上就是一个网页内标签元素正常从上到下，从左到右排列顺序的意思，比如块级元素会独占一行，行内元素会按顺序依次前后排列；按照这种大前提的布局排列之下绝对不会出现例外的情况叫做普通流布局。</p>
+<h3 id="什么是浮动"><a href="#什么是浮动" class="headerlink" title="什么是浮动"></a>什么是浮动</h3><p><strong>元素的浮动是指设置了浮动属性的元素会脱离标准普通流的控制，移动到其父元素中指定位置的过程。</strong></p>
+<h3 id="浮动属性详解"><a href="#浮动属性详解" class="headerlink" title="浮动属性详解"></a>浮动属性详解</h3><ol>
+<li><p>浮动首先创建包含块的概念（包裹）。就是说， 浮动的元素总是找理它最近的父级元素对齐。但是不会超出内边距的范围。</p>
+<p><img src="/2019/03/20/h5-2/float1.jpg" alt></p>
+</li>
+<li><p>浮动的元素排列位置，跟上一个元素（块级）有关系。如果上一个元素有浮动，则A元素顶部会和上一个元素的顶部对齐；如果上一个元素是标准流，则A元素的顶部会和上一个元素的底部对齐。</p>
+<p><img src="/2019/03/20/h5-2/float2.jpg" alt></p>
+</li>
+</ol>
+<ul>
+<li>由2可以推断出，一个父盒子里面的子盒子，如果其中一个子级有浮动的，则其他子级都需要浮动。这样才能一行对齐显示。</li>
+<li>浮动脱离标准流，不占位置，会影响后面的标准流。浮动只有左右浮动。</li>
+<li>元素添加浮动后，元素会具有行内块元素的特性。元素的大小完全取决于定义的大小或者默认的内容多少</li>
+<li>浮动根据元素书写的位置来显示相应的浮动。</li>
+</ul>
+<p>总结： 浮动 —&gt; 浮漏特</p>
+<p>浮： 加了浮动的元素盒子是浮起来的，漂浮在其他的标准流盒子上面。</p>
+<p>漏： 加了浮动的盒子，不占位置的，它浮起来了，它原来的位置漏 给了标准流的盒子。</p>
+<p>特： 特别注意，这是特殊的使用，有很多的不好处，使用要谨慎。</p>
+<h2 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h2><h3 id="为什么要清除浮动"><a href="#为什么要清除浮动" class="headerlink" title="为什么要清除浮动"></a>为什么要清除浮动</h3><p>由于浮动元素不再占用原文档流的位置，所以它会对后面的元素排版产生影响，为了解决这些问题，此时就需要在该元素中清除浮动。</p>
+<p>如果浮动一开始就是一个美丽的错误，那么请用正确的方法挽救它。</p>
+<h3 id="清除浮动的本质"><a href="#清除浮动的本质" class="headerlink" title="清除浮动的本质"></a>清除浮动的本质</h3><p>清除浮动主要为了解决父级元素因为子级浮动引起内部高度为 0 的问题。</p>
+<p><img src="/2019/03/20/h5-2/float3.jpg" alt></p>
+<p><img src="/2019/03/20/h5-2/float5.jpg" alt></p>
+<h3 id="清除浮动的方法（重点）"><a href="#清除浮动的方法（重点）" class="headerlink" title="清除浮动的方法（重点）"></a>清除浮动的方法（重点）</h3><p><strong>1、额外标签法</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">是W3C推荐的做法是通过在浮动元素末尾添加一个空的标签例如 &lt;div style=”clear:both”&gt;&lt;/div&gt;，或则其他标签br等亦可。</span><br></pre></td></tr></table></figure>
+<p><strong>优点：</strong> 通俗易懂，书写方便</p>
+<p><strong>缺点：</strong> 添加许多无意义的标签，结构化较差。 我只能说，w3c你推荐的方法我不接受，你不值得拥有。。。</p>
+<p><strong>2、父级添加 overflow 属性方法</strong></p>
+<p>可以给父级添加： overflow为 hidden|auto|scroll 都可以实现。可以先定义一个类名，然后把定义好的类名赋给浮动元素的父级元素。 语法：.clear{overflow:hidden;}</p>
+<p><strong>优点：</strong> 代码简洁</p>
+<p><strong>缺点：</strong> 内容增多时候容易造成不会自动换行导致内容被隐藏掉，无法显示需要溢出的元素。</p>
+<p><strong>3、使用after伪元素清除浮动</strong></p>
+<p>使用方法：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123;  <span class="attribute">content</span>: <span class="string">"."</span>; <span class="attribute">display</span>: block; <span class="attribute">height</span>: <span class="number">0</span>; <span class="attribute">clear</span>: both; <span class="attribute">visibility</span>: hidden;  &#125;   </span><br><span class="line"></span><br><span class="line">.clearfix &#123;*zoom: 1;&#125;   ie6、7 专有</span><br></pre></td></tr></table></figure>
+<p>优点： 符合闭合浮动思想 结构语义化正确</p>
+<p>缺点： 由于IE6-7不支持:after，使用 zoom:1触发 IE6-7 的特有属性 hasLayout</p>
+<p><strong>4、使用before和after双伪元素清除浮动</strong></p>
+<p>使用方法：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:before</span>,<span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>&#123; </span><br><span class="line">           <span class="attribute">content</span>:<span class="string">"."</span>;</span><br><span class="line">           <span class="attribute">display</span>:table;</span><br><span class="line">   &#125;</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>&#123;</span><br><span class="line"> <span class="attribute">clear</span>:both;</span><br><span class="line">&#125;</span><br><span class="line">.clearfix&#123;*zoom:1;&#125;</span><br></pre></td></tr></table></figure>
+<p>优点： 代码更简洁</p>
+<p>缺点： 由于IE6-7不支持:after，使用 zoom:1触发 IE6-7 的特有属性 hasLayout。</p>
+<h1 id="day2"><a href="#day2" class="headerlink" title="day2"></a>day2</h1><h2 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h2><p>所谓盒子模型就是把HTML页面中的元素看作是一个矩形的盒子，也就是一个盛装内容的容器。每个矩形都由元素的内容、内边距（padding）、边框（border）和 外边距（margin）组成。</p>
 <p>看透网页布局的本质： <strong>把网页元素比如文字图片等等，放入盒子里面，然后利用css摆放盒子的过程，就是网页布局。</strong></p>
 <h3 id="盒子边框"><a href="#盒子边框" class="headerlink" title="盒子边框"></a>盒子边框</h3><p>边框就是那层皮。 橘子皮。。香蕉皮。。橙子皮。。。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">border : border-width / border-style / border-color</span><br></pre></td></tr></table></figure>
@@ -507,8 +578,27 @@
 <li>可以为父元素定义1像素的上边框或上内边距。</li>
 <li>可以为父元素添加overflow:hidden。</li>
 </ol>
+<h3 id="盒子的总宽度和高度"><a href="#盒子的总宽度和高度" class="headerlink" title="盒子的总宽度和高度"></a>盒子的总宽度和高度</h3><p>使用宽度属性width和高度属性height可以对盒子的大小进行控制。</p>
+<p>width和height的属性值可以为不同单位的数值或相对于父元素的百分比%，实际工作中最常用的是像素值。</p>
+<p>大多数浏览器，如Firefox、IE6及以上版本都采用了W3C规范，符合CSS规范的盒子模型的总宽度和总高度的计算原则是：</p>
+<p><strong>盒子的总宽度= width+左右内边距之和+左右边框宽度之和+左右外边距之和</strong></p>
+<p><strong>盒子的总高度= height+上下内边距之和+上下边框宽度之和+上下外边距之和</strong></p>
+<p>注意：</p>
+<p>1、宽度属性width和高度属性height仅适用于块级元素，对行内元素无效（ img 标签和 input除外）。</p>
+<p>2、计算盒子模型的总高度时，还应考虑上下两个盒子垂直外边距合并的情况。</p>
+<h2 id="文本溢出相关属性"><a href="#文本溢出相关属性" class="headerlink" title="文本溢出相关属性"></a>文本溢出相关属性</h2><p>1、溢出属性(容器的)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">overflow:visible/hidden(隐藏)/scroll/auto(自动)/inherit;</span><br><span class="line">visible:默认值，内容不会被修剪，会成现在元素框之外；</span><br><span class="line"></span><br><span class="line">hidden：内容会被修剪，并且其余内容是不可见的；</span><br><span class="line"></span><br><span class="line">scroll：内容会被修剪，但是浏览器会显示滚动条，以便查看其余的内容;</span><br><span class="line"></span><br><span class="line">auto：如果内容被修剪，则浏览器会显示滚动条，以便查看其他的内容;</span><br><span class="line"></span><br><span class="line">inherit：规定应该从父元素继承overflow属性的值。</span><br></pre></td></tr></table></figure>
+<p>2、空余空间(了解)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">white-space：normal/nowrap/pre/pre-wrap /pre-line /inherit 该属性用来设置如何处理元素内的空白；</span><br><span class="line">normal：默认值，空白会被浏览器忽略，</span><br><span class="line"></span><br><span class="line">nowrap:文本不会换行，文本会在同一行上继续，直到遇到&lt;br/&gt;标签为止；</span><br><span class="line"></span><br><span class="line">pre：空白会被浏览器保留，其行为方式类似HTML中的pre标签；</span><br><span class="line"></span><br><span class="line">pre-wrap：保留空白符序列，但是正常的进行换行；</span><br><span class="line"></span><br><span class="line">pre-line:合并空白符序列，但是保留换行符；</span><br><span class="line"></span><br><span class="line">inherit：规定应该从父元素继承White-space属性的值；(ie浏览器不支持此属性值)</span><br></pre></td></tr></table></figure>
+<p>3、省略号显示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">text-overflow:clip/ellipsis</span><br></pre></td></tr></table></figure>
+<p>clip：不显示省略号（…），而是简单的裁切;</p>
+<p>ellipsis：当对象内文本溢出时，显示省略标记；</p>
+<p>text-overflow: 属性仅是当单行文本溢出时是否显示省略标记，并不具备其它的样式属性定义</p>
+<p><strong>要实现当行文本溢出时产生省略号的效果还需定义：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">1、容器宽度：width：value；</span><br><span class="line"></span><br><span class="line">2、强制文本在一行内显示:white-space：nowrap;</span><br><span class="line"></span><br><span class="line">3、溢出内容为隐藏：overflow：hidden；</span><br><span class="line"></span><br><span class="line">4、溢出文本显示省略号：text-overflow：ellipsis;</span><br><span class="line"></span><br><span class="line">拓展：方法2</span><br><span class="line"></span><br><span class="line">1、给当前设置省略号的元素加上&lt;nobr&gt;&lt;/nobr&gt;强制不换行标签</span><br><span class="line"></span><br><span class="line">2、给当前元素设置overflow：hidden；text-overflow：ellipsis;等属性</span><br></pre></td></tr></table></figure>
 <h1 id="day3"><a href="#day3" class="headerlink" title="day3"></a>day3</h1><h2 id="元素类型分类"><a href="#元素类型分类" class="headerlink" title="元素类型分类"></a>元素类型分类</h2><h3 id="块状元素-block-element"><a href="#块状元素-block-element" class="headerlink" title="块状元素(block element)"></a>块状元素(block element)</h3><ol>
-<li>块状元素在网页中就是以块的形式显示，所谓块状就是元素显示为矩形区域，常用的块状元素包括div,dl,dt,dd,ol,ul,fieldset,(h1-h6),p,form,hr,colgroup,col,table,tr,td,等；</li>
+<li>块状元素在网页中就是以块的形式显示，所谓块状就是元素显示为矩形区域，常用的块状元素包括div、dl、dt、dd、ol、ul、fieldset、(h1-h6)、p、form、hr、colgroup、col、table、tr、td等；</li>
 <li>默认情况下，块状元素都会占据一行，通俗的说，两个相邻块状元素不会出现并列显示的现象；默认情况下，块状元素按顺序自上而下排列。</li>
 <li>块状元素都可以定义自己的宽度和高度。</li>
 <li>块状元素一般都作为其他元素的容器，它可以容纳其它内联元素和其它块状元素。我们可以把这种容器比喻为一个盒子。</li>
@@ -628,6 +718,25 @@
 </tr>
 </tbody>
 </table>
+<h2 id="叠放次序（z-index）"><a href="#叠放次序（z-index）" class="headerlink" title="叠放次序（z-index）"></a>叠放次序（z-index）</h2><p>当对多个元素同时设置定位时，定位元素之间有可能会发生重叠。</p>
+<p>在 css 中 要想调整重叠定位元素的堆叠顺序，可以对定位元素应用z-index层叠等级属性，其取值可为正整数、负整数和0。</p>
+<p>比如： <code>z-index: 2;</code></p>
+<p>注意：</p>
+<ol>
+<li><code>z-index</code>的默认属性值是0，取值越大，定位元素在层叠元素中越居上。</li>
+<li>如果取值相同，则根据书写顺序，后来居上(最后写的优先显示在上层)。</li>
+<li>后面数字一定不能加单位。</li>
+<li>只有相对定位，绝对定位，固定定位有此属性，其余标准流，浮动，静态定位都无此属性，亦不可指定此属性。</li>
+</ol>
+<h2 id="包含块的概念及作用"><a href="#包含块的概念及作用" class="headerlink" title="包含块的概念及作用"></a>包含块的概念及作用</h2><p><strong>包含块是绝对定位的基础，包含块就是为绝对定位元素提供坐标，偏移和显示范围的参照物，即确定绝对定位的偏移起点和百分比 长度的参考；</strong></p>
+<p> 默认状态下，body是一个大的包含块，所有绝对定位的元素都是根据窗口来定自己所处的位置和百分比大小的显示的，如果我们定义了包含元素为包含元素块以后，对于被包含的绝对定位元素来说，就会根据最接近的具有定位功能的上级包含元素来定位自己的显示位置。 </p>
+<p><strong>定义元素为包含块：给绝对定位元素的父元素添加声明position：relative；</strong></p>
+<p>如果我们的父素设置了position:absolute;那么子元素也会相对父元素来定义自己的位置。</p>
+<h2 id="锚点链接的语法和应用场景"><a href="#锚点链接的语法和应用场景" class="headerlink" title="锚点链接的语法和应用场景"></a>锚点链接的语法和应用场景</h2><p>定义： 是网页制作中超级链接的一种，又叫命名锚记。命名锚记像一个迅速定位器一样是一种页面内的超级链接，运用相当普遍。</p>
+<p>命名锚点的作用：在同一页面内的不同位置进行跳转。 制作锚标记： 1)给元素定义命名锚记名 语法：<code>&lt;标记 id=&quot;命名锚记名&quot;&gt; &lt;/标记&gt;</code>2)命名锚记连接 语法：<code>&lt;a href=&quot;#命名锚记名称&quot;&gt;&lt;/a&gt;</code></p>
+<h2 id="透明写法"><a href="#透明写法" class="headerlink" title="透明写法"></a><em>透明写法</em></h2><p><em>IE浏览器写法：<code>filter:alpha(opacity=value);</code>取值范围 1-100 兼容其他浏览器写法：<code>opacity:0.value;</code> value 的取值范围 0-1 ( 0.1,0.2,0.3 —– 0.9 — 1 )</em></p>
+<h2 id="marquee-滚动字幕"><a href="#marquee-滚动字幕" class="headerlink" title="marquee (滚动字幕)"></a><em>marquee (滚动字幕)</em></h2><p><strong><em>滚动字幕的应用：</em></strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">marquee</span> </span></span><br><span class="line"><span class="tag"><span class="attr">behavior</span>（行为）=<span class="string">"scroll(滚动)/alternate（晃动）"</span><span class="attr">direction</span>（方向）=<span class="string">"up(从下向上)/down（从上向下）/left（从右向左）/right（从左向右）"</span> </span></span><br><span class="line"><span class="tag"><span class="attr">scrollamount</span>（滚动速度）=<span class="string">"value"</span><span class="attr">height</span>=<span class="string">"value(上下滚动范围)"</span><span class="attr">width</span>=<span class="string">""</span>(左右滚动范围)&gt;</span></span><br><span class="line">内容</span><br><span class="line"><span class="tag">&lt;/<span class="name">marquee</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><strong>补充：</strong></p>
 <ul>
 <li>在父元素没有定位的情况下，是相对于body进行定位的。</li>
@@ -638,11 +747,32 @@
 <li>给了绝对定位或者固定定位的元素，自动隐式转换为行内块的类型。</li>
 <li>所有的元素类型都可以给定位。</li>
 </ul>
-<h2 id="拓展-bug-巴啦啦"><a href="#拓展-bug-巴啦啦" class="headerlink" title="拓展\bug\巴啦啦"></a>拓展\bug\巴啦啦</h2><p>1、行内块元素不能转换成内联元素。</p>
-<p>2、在浏览器中加载图片的过程中，图片底部和div之间会有几个像素的距离。<code>vertical-align: buttom;</code></p>
-<p>3、float 可以隐式转换为行内元素。</p>
-<p>4、css鼠标的样式</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cursuer: pointer; //小手样式</span><br><span class="line">curser: default;  //三角形</span><br><span class="line">curser: wait;    //转圈圈</span><br><span class="line">curser: help;    //帮助？</span><br></pre></td></tr></table></figure>
+<h2 id="拓展-bug-巴啦啦"><a href="#拓展-bug-巴啦啦" class="headerlink" title="拓展\bug\巴啦啦"></a>拓展\bug\巴啦啦</h2><ul>
+<li><p>行内块元素不能转换成内联元素。</p>
+</li>
+<li><p>在浏览器中加载图片的过程中，图片底部和div之间会有几个像素的距离。<code>vertical-align: buttom;</code></p>
+</li>
+<li><p>float 可以隐式转换为行内元素。</p>
+</li>
+<li><p>css鼠标的样式</p>
+</li>
+<li><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cursuer: pointer; //小手样式</span><br><span class="line">curser: default;  //三角形</span><br><span class="line">curser: wait;    //转圈圈</span><br><span class="line">curser: help;    //帮助？</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在父元素没有定位的情况下，是相对于body进行定位的。</p>
+</li>
+<li><p>在父元素有定位（absolute、relative）的情况下，是相对于父元素进行定位的。</p>
+</li>
+<li><p><strong>子绝父相-</strong>&gt; 子元素绝对定位，父元素相对定位。</p>
+</li>
+<li><p>由于给了定位的元素完全脱离标准流，也就是说不再占位。所以如果父元素给了绝对定位，会印象后边的元素的布局，所以如果想要子元素相对于父元素定位，那么最好给父元素一个相对定位。（子绝父相的由来）</p>
+</li>
+<li><p>给了定位模式（absolute）的元素，如果不给边偏移，它会完全脱离标准流，不占位，后边的元素跑上来，但是看到的是给了定位的元素。</p>
+</li>
+<li><p>给了绝对定位或者固定定位的元素，自动隐式转换为行内块的类型。</p>
+</li>
+<li><p>所有的元素类型都可以给定位。</p>
+</li>
+</ul>
 
       
     </div>
@@ -703,8 +833,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/21/zhuanzai1/" rel="prev" title="如何用平淡的语气写出虐到让人喘不过气，或让读者感到震撼、震惊的感觉？（转）">
-                如何用平淡的语气写出虐到让人喘不过气，或让读者感到震撼、震惊的感觉？（转） <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/21/zhuanzai1/" rel="prev" title="如何用平淡的语气写出虐到让人喘不过气，或让读者感到震撼、震惊的感觉？">
+                如何用平淡的语气写出虐到让人喘不过气，或让读者感到震撼、震惊的感觉？ <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -920,7 +1050,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#day2"><span class="nav-number">1.</span> <span class="nav-text">day2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#盒模型"><span class="nav-number">1.1.</span> <span class="nav-text">盒模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#盒子边框"><span class="nav-number">1.1.1.</span> <span class="nav-text">盒子边框</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#表单的边框清零"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">表单的边框清零</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表格的细线边框"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">表格的细线边框</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#轮廓-outline"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">轮廓 outline</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#盒子边框总结表"><span class="nav-number">1.1.1.4.</span> <span class="nav-text">盒子边框总结表</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内边距-padding"><span class="nav-number">1.1.2.</span> <span class="nav-text">内边距 padding</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外边距-margin"><span class="nav-number">1.1.3.</span> <span class="nav-text">外边距 margin</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#外边距实现盒子居中"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">外边距实现盒子居中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#清除元素的默认内外边距"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">清除元素的默认内外边距</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#相邻块元素垂直外边距的合并"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">相邻块元素垂直外边距的合并</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#嵌套块元素垂直外边距的合并"><span class="nav-number">1.1.3.4.</span> <span class="nav-text">嵌套块元素垂直外边距的合并</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#day3"><span class="nav-number">2.</span> <span class="nav-text">day3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#元素类型分类"><span class="nav-number">2.1.</span> <span class="nav-text">元素类型分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#块状元素-block-element"><span class="nav-number">2.1.1.</span> <span class="nav-text">块状元素(block element)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内联元素或者叫行内元素-inline-element"><span class="nav-number">2.1.2.</span> <span class="nav-text">内联元素或者叫行内元素( inline element )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内联块状元素-行内块"><span class="nav-number">2.1.3.</span> <span class="nav-text">内联块状元素(行内块)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可变元素"><span class="nav-number">2.1.4.</span> <span class="nav-text">可变元素</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元素类型的转换"><span class="nav-number">2.2.</span> <span class="nav-text">元素类型的转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元素垂直居中"><span class="nav-number">2.3.</span> <span class="nav-text">元素垂直居中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#置换和非置换元素的概念"><span class="nav-number">2.4.</span> <span class="nav-text">置换和非置换元素的概念</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#day4"><span class="nav-number">3.</span> <span class="nav-text">day4</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定位初识"><span class="nav-number">3.1.</span> <span class="nav-text">定位初识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#元素的定位属性"><span class="nav-number">3.1.1.</span> <span class="nav-text">元素的定位属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态定位-static-普遍型"><span class="nav-number">3.1.2.</span> <span class="nav-text">静态定位 static (普遍型)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相对定位-relative-自恋型"><span class="nav-number">3.1.3.</span> <span class="nav-text">相对定位 relative (自恋型)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绝对定位-absolute-拼爹型"><span class="nav-number">3.1.4.</span> <span class="nav-text">绝对定位 absolute (拼爹型)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#父级没有定位时以浏览器为准"><span class="nav-number">3.1.4.1.</span> <span class="nav-text">父级没有定位时以浏览器为准</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#父级有定位以父级为准"><span class="nav-number">3.1.4.2.</span> <span class="nav-text">父级有定位以父级为准</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#绝对定位的盒子没有边偏移"><span class="nav-number">3.1.4.3.</span> <span class="nav-text">绝对定位的盒子没有边偏移</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#子绝父相"><span class="nav-number">3.1.4.4.</span> <span class="nav-text">子绝父相</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#固定定位-fixed-认死理型"><span class="nav-number">3.1.5.</span> <span class="nav-text">固定定位 fixed (认死理型)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四种定位总结"><span class="nav-number">3.2.</span> <span class="nav-text">四种定位总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拓展-bug-巴啦啦"><span class="nav-number">3.3.</span> <span class="nav-text">拓展\bug\巴啦啦</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#day1"><span class="nav-number">1.</span> <span class="nav-text">day1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文本样式属性"><span class="nav-number">1.1.</span> <span class="nav-text">文本样式属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文本修饰-text-decoration"><span class="nav-number">1.1.1.</span> <span class="nav-text">文本修饰 text-decoration</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#首行缩进-text-indent"><span class="nav-number">1.1.2.</span> <span class="nav-text">首行缩进 text-indent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字间距-letter-spacing"><span class="nav-number">1.1.3.</span> <span class="nav-text">字间距 letter-spacing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文字属性简写-font"><span class="nav-number">1.1.4.</span> <span class="nav-text">文字属性简写 font</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表属性"><span class="nav-number">1.2.</span> <span class="nav-text">列表属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义列表符号样式"><span class="nav-number">1.2.1.</span> <span class="nav-text">定义列表符号样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用图片作为列表符号"><span class="nav-number">1.2.2.</span> <span class="nav-text">使用图片作为列表符号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义列表符号的位置"><span class="nav-number">1.2.3.</span> <span class="nav-text">定义列表符号的位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#去掉列表样式"><span class="nav-number">1.2.4.</span> <span class="nav-text">去掉列表样式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#背景属性"><span class="nav-number">1.3.</span> <span class="nav-text">背景属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景图片平铺属性"><span class="nav-number">1.3.1.</span> <span class="nav-text">背景图片平铺属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#背景图的固定"><span class="nav-number">1.3.2.</span> <span class="nav-text">背景图的固定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#背景图片的位置"><span class="nav-number">1.3.3.</span> <span class="nav-text">背景图片的位置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浮动"><span class="nav-number">1.4.</span> <span class="nav-text">浮动</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文档流-普通流-标准流"><span class="nav-number">1.4.1.</span> <span class="nav-text">文档流(普通流/标准流)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是浮动"><span class="nav-number">1.4.2.</span> <span class="nav-text">什么是浮动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮动属性详解"><span class="nav-number">1.4.3.</span> <span class="nav-text">浮动属性详解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#清除浮动"><span class="nav-number">1.5.</span> <span class="nav-text">清除浮动</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要清除浮动"><span class="nav-number">1.5.1.</span> <span class="nav-text">为什么要清除浮动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#清除浮动的本质"><span class="nav-number">1.5.2.</span> <span class="nav-text">清除浮动的本质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#清除浮动的方法（重点）"><span class="nav-number">1.5.3.</span> <span class="nav-text">清除浮动的方法（重点）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#day2"><span class="nav-number">2.</span> <span class="nav-text">day2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#盒模型"><span class="nav-number">2.1.</span> <span class="nav-text">盒模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#盒子边框"><span class="nav-number">2.1.1.</span> <span class="nav-text">盒子边框</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#表单的边框清零"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">表单的边框清零</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表格的细线边框"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">表格的细线边框</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#轮廓-outline"><span class="nav-number">2.1.1.3.</span> <span class="nav-text">轮廓 outline</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#盒子边框总结表"><span class="nav-number">2.1.1.4.</span> <span class="nav-text">盒子边框总结表</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内边距-padding"><span class="nav-number">2.1.2.</span> <span class="nav-text">内边距 padding</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外边距-margin"><span class="nav-number">2.1.3.</span> <span class="nav-text">外边距 margin</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#外边距实现盒子居中"><span class="nav-number">2.1.3.1.</span> <span class="nav-text">外边距实现盒子居中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#清除元素的默认内外边距"><span class="nav-number">2.1.3.2.</span> <span class="nav-text">清除元素的默认内外边距</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#相邻块元素垂直外边距的合并"><span class="nav-number">2.1.3.3.</span> <span class="nav-text">相邻块元素垂直外边距的合并</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#嵌套块元素垂直外边距的合并"><span class="nav-number">2.1.3.4.</span> <span class="nav-text">嵌套块元素垂直外边距的合并</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#盒子的总宽度和高度"><span class="nav-number">2.1.4.</span> <span class="nav-text">盒子的总宽度和高度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本溢出相关属性"><span class="nav-number">2.2.</span> <span class="nav-text">文本溢出相关属性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#day3"><span class="nav-number">3.</span> <span class="nav-text">day3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#元素类型分类"><span class="nav-number">3.1.</span> <span class="nav-text">元素类型分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#块状元素-block-element"><span class="nav-number">3.1.1.</span> <span class="nav-text">块状元素(block element)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内联元素或者叫行内元素-inline-element"><span class="nav-number">3.1.2.</span> <span class="nav-text">内联元素或者叫行内元素( inline element )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内联块状元素-行内块"><span class="nav-number">3.1.3.</span> <span class="nav-text">内联块状元素(行内块)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可变元素"><span class="nav-number">3.1.4.</span> <span class="nav-text">可变元素</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元素类型的转换"><span class="nav-number">3.2.</span> <span class="nav-text">元素类型的转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元素垂直居中"><span class="nav-number">3.3.</span> <span class="nav-text">元素垂直居中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#置换和非置换元素的概念"><span class="nav-number">3.4.</span> <span class="nav-text">置换和非置换元素的概念</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#day4"><span class="nav-number">4.</span> <span class="nav-text">day4</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定位初识"><span class="nav-number">4.1.</span> <span class="nav-text">定位初识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#元素的定位属性"><span class="nav-number">4.1.1.</span> <span class="nav-text">元素的定位属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态定位-static-普遍型"><span class="nav-number">4.1.2.</span> <span class="nav-text">静态定位 static (普遍型)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相对定位-relative-自恋型"><span class="nav-number">4.1.3.</span> <span class="nav-text">相对定位 relative (自恋型)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绝对定位-absolute-拼爹型"><span class="nav-number">4.1.4.</span> <span class="nav-text">绝对定位 absolute (拼爹型)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#父级没有定位时以浏览器为准"><span class="nav-number">4.1.4.1.</span> <span class="nav-text">父级没有定位时以浏览器为准</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#父级有定位以父级为准"><span class="nav-number">4.1.4.2.</span> <span class="nav-text">父级有定位以父级为准</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#绝对定位的盒子没有边偏移"><span class="nav-number">4.1.4.3.</span> <span class="nav-text">绝对定位的盒子没有边偏移</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#子绝父相"><span class="nav-number">4.1.4.4.</span> <span class="nav-text">子绝父相</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#固定定位-fixed-认死理型"><span class="nav-number">4.1.5.</span> <span class="nav-text">固定定位 fixed (认死理型)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四种定位总结"><span class="nav-number">4.2.</span> <span class="nav-text">四种定位总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#叠放次序（z-index）"><span class="nav-number">4.3.</span> <span class="nav-text">叠放次序（z-index）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#包含块的概念及作用"><span class="nav-number">4.4.</span> <span class="nav-text">包含块的概念及作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#锚点链接的语法和应用场景"><span class="nav-number">4.5.</span> <span class="nav-text">锚点链接的语法和应用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#透明写法"><span class="nav-number">4.6.</span> <span class="nav-text">透明写法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#marquee-滚动字幕"><span class="nav-number">4.7.</span> <span class="nav-text">marquee (滚动字幕)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拓展-bug-巴啦啦"><span class="nav-number">4.8.</span> <span class="nav-text">拓展\bug\巴啦啦</span></a></li></ol></li></ol></div>
             
 
           </div>
