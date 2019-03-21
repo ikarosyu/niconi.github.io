@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ikaros.ml/"/>
-  <updated>2019-03-21T03:41:18.712Z</updated>
+  <updated>2019-03-21T06:24:16.731Z</updated>
   <id>http://ikaros.ml/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何用平淡的语气写出虐到让人喘不过气，或让读者感到震撼、震惊的感觉？（转）</title>
+    <link href="http://ikaros.ml/2019/03/21/zhuanzai1/"/>
+    <id>http://ikaros.ml/2019/03/21/zhuanzai1/</id>
+    <published>2019-03-21T06:18:05.000Z</published>
+    <updated>2019-03-21T06:24:16.731Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;“炖好了吗？”丈夫冲着厨房问道。&lt;br&gt;“差不多了，这就给你端来。”厨房内传来妻子的声音。&lt;br&gt;丈夫看着瘦弱的妻子从里头出来，她握着汤碗的手早已骨瘦如柴。&lt;br&gt;“你先吃吧。”妻子把汤放下。&lt;br&gt;丈夫没有说话，直接喝了一口，然后夹起一块肉，放入嘴里。而妻子就这么看着他。&lt;br&gt;不一会儿，肉汤已少了一半。&lt;br&gt;妻子咽了咽口水，也拿起了筷子。&lt;br&gt;肉汤喝完，肉也没了，只剩下一堆碎骨。骨头是丈夫剁碎的，但此刻他已分别不出哪些是头盖骨，哪些是尾椎骨。&lt;br&gt;妻子看了一眼丈夫，又摸了摸还没饱的肚子。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="日常" scheme="http://ikaros.ml/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+      <category term="转载" scheme="http://ikaros.ml/categories/%E6%97%A5%E5%B8%B8/%E8%BD%AC%E8%BD%BD/"/>
+    
+    
+      <category term="amazed" scheme="http://ikaros.ml/tags/amazed/"/>
+    
+      <category term="thought" scheme="http://ikaros.ml/tags/thought/"/>
+    
+  </entry>
   
   <entry>
     <title>记录我的大前端修行2.1</title>
