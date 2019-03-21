@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ikaros.ml/"/>
-  <updated>2019-03-21T06:24:16.731Z</updated>
+  <updated>2019-03-21T06:26:23.629Z</updated>
   <id>http://ikaros.ml/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://ikaros.ml/2019/03/21/zhuanzai1/"/>
     <id>http://ikaros.ml/2019/03/21/zhuanzai1/</id>
     <published>2019-03-21T06:18:05.000Z</published>
-    <updated>2019-03-21T06:24:16.731Z</updated>
+    <updated>2019-03-21T06:26:23.629Z</updated>
     
     <summary type="html">
     
@@ -34,9 +34,9 @@
       <category term="转载" scheme="http://ikaros.ml/categories/%E6%97%A5%E5%B8%B8/%E8%BD%AC%E8%BD%BD/"/>
     
     
-      <category term="amazed" scheme="http://ikaros.ml/tags/amazed/"/>
+      <category term="thoughts" scheme="http://ikaros.ml/tags/thoughts/"/>
     
-      <category term="thought" scheme="http://ikaros.ml/tags/thought/"/>
+      <category term="amazed" scheme="http://ikaros.ml/tags/amazed/"/>
     
   </entry>
   
