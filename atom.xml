@@ -159,9 +159,9 @@
       <category term="日常" scheme="http://ikaros.ml/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
-      <category term="emotion" scheme="http://ikaros.ml/tags/emotion/"/>
-    
       <category term="thoughts" scheme="http://ikaros.ml/tags/thoughts/"/>
+    
+      <category term="emotion" scheme="http://ikaros.ml/tags/emotion/"/>
     
   </entry>
   
@@ -189,9 +189,9 @@
     
       <category term="share" scheme="http://ikaros.ml/tags/share/"/>
     
-      <category term="emotion" scheme="http://ikaros.ml/tags/emotion/"/>
-    
       <category term="thoughts" scheme="http://ikaros.ml/tags/thoughts/"/>
+    
+      <category term="emotion" scheme="http://ikaros.ml/tags/emotion/"/>
     
   </entry>
   
