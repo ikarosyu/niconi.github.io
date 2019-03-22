@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>ikaros</title>
+  <title>ikaros&#39;blog</title>
   
-  
+  <subtitle>平安喜乐</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ikaros.ml/"/>
@@ -159,9 +159,9 @@
       <category term="日常" scheme="http://ikaros.ml/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
-      <category term="thoughts" scheme="http://ikaros.ml/tags/thoughts/"/>
-    
       <category term="emotion" scheme="http://ikaros.ml/tags/emotion/"/>
+    
+      <category term="thoughts" scheme="http://ikaros.ml/tags/thoughts/"/>
     
   </entry>
   
@@ -189,9 +189,9 @@
     
       <category term="share" scheme="http://ikaros.ml/tags/share/"/>
     
-      <category term="thoughts" scheme="http://ikaros.ml/tags/thoughts/"/>
-    
       <category term="emotion" scheme="http://ikaros.ml/tags/emotion/"/>
+    
+      <category term="thoughts" scheme="http://ikaros.ml/tags/thoughts/"/>
     
   </entry>
   
