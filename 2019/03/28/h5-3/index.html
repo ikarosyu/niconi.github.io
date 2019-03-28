@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=7.0.1">
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":6,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="day1宽高自适应的概念和使用网页布局中经常要定义元素的宽和高。但很多时候我们希望元素的大小能够根据窗口或子元素自动调整，这就是自适应 元素自适应在网页布局中非常重要，它能够使网页显示更灵活，可以适应在不同设备、不同窗口和不同分辨率下显示。 (1)宽度自适应 元素宽度设置为100%。（块元素宽度默认为100%） width:100%; (2) 高度自适应 元素{height:auto;}/高度不写">
+<meta name="keywords" content="html5,css3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记录我的大前端修行3.1">
+<meta property="og:url" content="http://ikaros.ml/2019/03/28/h5-3/index.html">
+<meta property="og:site_name" content="ikaros&#39;blog">
+<meta property="og:description" content="day1宽高自适应的概念和使用网页布局中经常要定义元素的宽和高。但很多时候我们希望元素的大小能够根据窗口或子元素自动调整，这就是自适应 元素自适应在网页布局中非常重要，它能够使网页显示更灵活，可以适应在不同设备、不同窗口和不同分辨率下显示。 (1)宽度自适应 元素宽度设置为100%。（块元素宽度默认为100%） width:100%; (2) 高度自适应 元素{height:auto;}/高度不写">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-28T04:29:34.827Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="记录我的大前端修行3.1">
+<meta name="twitter:description" content="day1宽高自适应的概念和使用网页布局中经常要定义元素的宽和高。但很多时候我们希望元素的大小能够根据窗口或子元素自动调整，这就是自适应 元素自适应在网页布局中非常重要，它能够使网页显示更灵活，可以适应在不同设备、不同窗口和不同分辨率下显示。 (1)宽度自适应 元素宽度设置为100%。（块元素宽度默认为100%） width:100%; (2) 高度自适应 元素{height:auto;}/高度不写">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ikaros'blog" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="http://ikaros.ml/2019/03/28/h5-3/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>记录我的大前端修行3.1 | ikaros'blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ikaros'blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">平安喜乐</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+  
+  
+
+  
+
+  <a href="https://github.com/ikarosyu" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" style="fill: #222; color: #fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ikaros.ml/2019/03/28/h5-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ikaros">
+      <meta itemprop="description" content="like sunday like rain like apple and cinnamon">
+      <meta itemprop="image" content="/images/Misaka.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ikaros'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">记录我的大前端修行3.1
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-28 12:28:17 / 修改时间：12:29:34" itemprop="dateCreated datePublished" datetime="2019-03-28T12:28:17+08:00">2019-03-28</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/大前端/" itemprop="url" rel="index"><span itemprop="name">大前端</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">10k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">9 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="day1"><a href="#day1" class="headerlink" title="day1"></a>day1</h1><h2 id="宽高自适应的概念和使用"><a href="#宽高自适应的概念和使用" class="headerlink" title="宽高自适应的概念和使用"></a>宽高自适应的概念和使用</h2><p>网页布局中经常要定义元素的宽和高。但很多时候我们希望元素的大小能够根据窗口或子元素自动调整，这就是自适应</p>
+<p>元素自适应在网页布局中非常重要，它能够使网页显示更灵活，可以适应在不同设备、不同窗口和不同分辨率下显示。</p>
+<p>(1)宽度自适应</p>
+<p>元素宽度设置为100%。（块元素宽度默认为100%） width:100%;</p>
+<p>(2) 高度自适应</p>
+<p>元素{height:auto;}/高度不写</p>
+<h2 id="最小高度"><a href="#最小高度" class="headerlink" title="最小高度"></a>最小高度</h2><p>注：height属性在IE6里就类似<code>min-height</code>作用。</p>
+<p>注：IE6及以下版本不识别该组属性。</p>
+<h2 id="过滤器的使用"><a href="#过滤器的使用" class="headerlink" title="过滤器的使用"></a>过滤器的使用</h2><h3 id="下划线属性过滤器"><a href="#下划线属性过滤器" class="headerlink" title="下划线属性过滤器"></a>下划线属性过滤器</h3><p>当在一个属性前面增加了一个下划线后，由于符合标准的浏览器不能识别带有下划线的属性而忽略了这个声明，但是在IE6及更低版本浏览器中会继续解析这个规则。 语法：<code>选择符{_属性：属性值；}</code></p>
+<h3 id="important-关键字过滤器"><a href="#important-关键字过滤器" class="headerlink" title="!important 关键字过滤器"></a>!important 关键字过滤器</h3><p>它表示所附加的声明具有最高优先级. 语法：<code>选择符{属性：属性值!important;}</code></p>
+<h2 id="最小高度和高度自适应引发的兼容问题"><a href="#最小高度和高度自适应引发的兼容问题" class="headerlink" title="最小高度和高度自适应引发的兼容问题"></a>最小高度和高度自适应引发的兼容问题</h2><p><strong>元素具备最小高度的自适应</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">min-height</span>属性：最小高度；(<span class="selector-tag">IE6</span>浏览器不识别该属性)</span><br><span class="line"></span><br><span class="line">兼容元素具备最小高度自适应的方法：</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">hack1</span><span class="selector-pseudo">:min-height</span><span class="selector-pseudo">:value</span>; _<span class="selector-tag">height</span><span class="selector-pseudo">:value</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">hack2</span><span class="selector-pseudo">:min-height</span><span class="selector-pseudo">:value</span>; <span class="selector-tag">height</span><span class="selector-pseudo">:auto</span> !<span class="selector-tag">important</span>; <span class="selector-tag">height</span><span class="selector-pseudo">:value</span>;(建议使用)</span><br></pre></td></tr></table></figure>
+<h2 id="伪对象选择符"><a href="#伪对象选择符" class="headerlink" title="伪对象选择符"></a>伪对象选择符</h2><ol>
+<li><p><code>::after</code>与<code>content</code>属性一起使用，定义在对象后的内容。如：<code>div::after{content:url(logo.jpg);}</code></p>
+<p><code>div::after{content:&quot;文本内容&quot;;}</code></p>
+</li>
+<li><p><code>::before</code>与<code>content</code>属性一起使用，定义在对象前的内容。如：<code>div:before{content:&quot;在其前放内容&quot;;}</code></p>
+</li>
+<li><p><code>::first-letter</code>定义对象内第一个字符的样式。说明：(该伪元素只能用于块级元素。)</p>
+</li>
+<li><p><code>::first-line</code>定义对象内第一行的样式。该伪元素只能用于块级元素。ie6以下版本浏览器不支持伪对象选择符。</p>
+</li>
+</ol>
+<p><strong>注：一个冒号叫伪类选择器，两个冒号叫伪对象选择器。</strong></p>
+<h2 id="自适应窗口-一屏页面的书写"><a href="#自适应窗口-一屏页面的书写" class="headerlink" title="自适应窗口(一屏页面的书写)"></a>自适应窗口(一屏页面的书写)</h2><p>元素宽高度自适应窗口高度</p>
+<p>设置方法：<code>html,body{width:100%;height:100%;}</code></p>
+<h1 id="day2"><a href="#day2" class="headerlink" title="day2"></a>day2</h1><h2 id="表单标签及属性补充"><a href="#表单标签及属性补充" class="headerlink" title="表单标签及属性补充"></a>表单标签及属性补充</h2><h3 id="表单字段集"><a href="#表单字段集" class="headerlink" title="表单字段集"></a>表单字段集</h3><p>语法：<code>&lt;fieldset disabled=&quot;disabled&quot;&gt;&lt;/fieldset&gt;</code></p>
+<p>说明：相当于一个方框，在字段集中可以包含文本和其他元素。该元素用于对表单中的元素进行分组并在文档中区别标出文本。fieldset元素可以嵌套，在其内部可以在设置多个fieldset对象。disabled定义空间禁制可用；</p>
+<h3 id="字段级标题"><a href="#字段级标题" class="headerlink" title="字段级标题"></a>字段级标题</h3><p>语法：<code>&lt;legend align=&quot;left/center/right&quot;&gt;&lt;/legend&gt;</code></p>
+<p>说明：legend元素可以在fieldset对象绘制的方框内插入一个标题。legend元素必须是fieldset内的<strong>唯一</strong>个元素。</p>
+<h3 id="提示信息标签"><a href="#提示信息标签" class="headerlink" title="提示信息标签"></a>提示信息标签</h3><p>语法：<code>&lt;label for=&quot;绑定控件id名&quot;&gt;&lt;/label&gt;</code></p>
+<p>说明：label元素用来定义标签，为页面上的其他元素指定提示信息。要将label元素绑定到其他的控件上，可以将label元素的for属性设置为与该控件的id属性值相同。</p>
+<h3 id="上传文本框"><a href="#上传文本框" class="headerlink" title="上传文本框"></a>上传文本框</h3><p>语法：<code>&lt;input type=&quot;file&quot; multiple=&quot;multiple&quot; /&gt;</code> 说明：type属性值新增的类型有：file 文件类型，可进行文件的选择，multiple 属性可实现多选</p>
+<h3 id="图像域"><a href="#图像域" class="headerlink" title="图像域"></a>图像域</h3><p>语法：<code>&lt;input type=&quot;image&quot; src=&quot;&quot; width=&quot;&quot; height=&quot;&quot; alt=&quot;图片&quot; /&gt;</code> 说明：火狐低版本不支持此表单元素;</p>
+<h2 id="表格标签及属性补充"><a href="#表格标签及属性补充" class="headerlink" title="表格标签及属性补充"></a>表格标签及属性补充</h2><h3 id="单元格间距-border-spacing"><a href="#单元格间距-border-spacing" class="headerlink" title="单元格间距 border-spacing"></a>单元格间距 border-spacing</h3><p>语法：<code>border-spacing:value;</code></p>
+<p>说明：单元格间距(该属性必须给table添加) 表示单元格边框之间的距离， 不可取负值</p>
+<h3 id="合并相邻单元格边框-border-collapse"><a href="#合并相邻单元格边框-border-collapse" class="headerlink" title="合并相邻单元格边框 border-collapse"></a>合并相邻单元格边框 border-collapse</h3><p>语法：<code>border-collapse:separate/collapse;</code></p>
+<p>说明：合并相邻单元格边框 (该属性必须给table添加) separate(边框分开)默认值； collapse(边框合并)</p>
+<h3 id="无内容-empty-cells"><a href="#无内容-empty-cells" class="headerlink" title="无内容 empty-cells"></a>无内容 empty-cells</h3><p>语法：<code>empty-cells:show/hide;</code></p>
+<p>说明：定义当单元格无内容时，是否显示该单元格的边框区域；show：显示 ；hide：隐藏；</p>
+<h3 id="定义表格布局-table-layout"><a href="#定义表格布局-table-layout" class="headerlink" title="定义表格布局 table-layout"></a>定义表格布局 table-layout</h3><p>语法：<code>table-layout:auto/fixed;</code></p>
+<p>定义表格的布局算法，设置fixed，文本为英文字母且无空格时，内容超出单元格宽度则固定不变；如没设宽则平均分配；设置auto时，则随内容宽度而定；火狐浏览器存在兼容。 (fixed：固定宽，不会随内容多少改变单元格宽,宽度可以明确定义，没有定义时则宽度会平均分配，高度则会随内容变化)</p>
+<h3 id="隔行变色"><a href="#隔行变色" class="headerlink" title="隔行变色"></a>隔行变色</h3><p>双数行： <code>tr:nth-child(2n){ }</code> even (偶数) 单数行：<code>tr:nth-child(2n+1){ }</code> odd 奇数 设置单数单元格的样式和双数单元格的样式</p>
+<h3 id="表格标题"><a href="#表格标题" class="headerlink" title="表格标题"></a>表格标题</h3><p><code>&lt;caption&gt;标题内容&lt;/caption&gt;</code> <code>caption</code>:表格标题 表格标题位置：<code>caption-side:top/right/bottom/left</code> 说明：left,right位置只有火狐识别，top,bottom IE7上版本支持，ie7以下版本不支持其它属性值，只识别top</p>
+<h3 id="HTML-重要属性"><a href="#HTML-重要属性" class="headerlink" title="HTML 重要属性"></a>HTML 重要属性</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1）colspan="value" 合并列</span><br><span class="line">2）rowspan="value" 和并行</span><br><span class="line">3）valign="top/bottom/middle/baseline" 垂直对齐方式 </span><br><span class="line">4）rules="rows/cols/all/none" 添加组分隔线</span><br><span class="line">说明：</span><br><span class="line"><span class="selector-tag">rows</span>:位于行之间的线条</span><br><span class="line"><span class="selector-tag">cols</span>:位于列之间的线条</span><br><span class="line"><span class="selector-tag">all</span>：位于行和列之间的线条</span><br><span class="line"><span class="selector-tag">none</span>:没有线条</span><br></pre></td></tr></table></figure>
+<h3 id="数据列分组"><a href="#数据列分组" class="headerlink" title="数据列分组"></a>数据列分组</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">(1) &lt;colgroup span="value"&gt;&lt;/colgroup&gt;</span><br><span class="line"></span><br><span class="line">(2) &lt;col span="value" /&gt;</span><br><span class="line"></span><br><span class="line">说明：</span><br><span class="line"></span><br><span class="line">1）<span class="selector-tag">col</span>和<span class="selector-tag">colgroup</span>元素会根据从左到右的顺序依次对数据表格进行分组。</span><br><span class="line">2）<span class="selector-tag">span</span>属性显示指定相邻几列组成一组，<span class="selector-tag">span</span>属性值默认为1，默认时仅定义一列为一组。</span><br><span class="line">3）可以通过给table添加rules="groups"属性来给分组列添加组的分割线。</span><br><span class="line"></span><br><span class="line">注意：虽然<span class="selector-tag">col</span>和<span class="selector-tag">colgroup</span>具有相同的功能，一个是单标签一个是双标签，两个都存在浏览器兼容问题。</span><br></pre></td></tr></table></figure>
+<h3 id="数据行分组"><a href="#数据行分组" class="headerlink" title="数据行分组"></a>数据行分组</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;thead&gt;&lt;/thead&gt; 表头</span><br><span class="line"></span><br><span class="line">&lt;tbody&gt;&lt;/tbody&gt; 表体</span><br><span class="line"></span><br><span class="line">&lt;tfoot&gt;&lt;/tfoot&gt; 表尾</span><br><span class="line"></span><br><span class="line">说明：一个<span class="selector-tag">Table</span>中，只能包含一个<span class="selector-tag">thead</span>,一个<span class="selector-tag">tfoot</span>,但可包含多个<span class="selector-tag">tbody</span>。</span><br></pre></td></tr></table></figure>
+<p>thead 元素应该与 tbody 和 tfoot 元素结合起来使用。 tbody 元素用于对 HTML 表格中的主体内容进行分组， tfoot 元素用于对 HTML 表格中的表注（页脚）内容进行分组。</p>
+<p>如果要使用 thead、tfoot 以及 tbody 元素，就必须使用全部的元素。 它们的出现次序是：thead、tbody/tfoot、，这样浏览器就可以在收到所有数据前呈现页脚了。必须在 table 元素内部使用这些标签。 提示：在默认情况下这些元素不会影响到表格的布局。不过，可以使用 CSS 使这些元素改变表格的外观。</p>
+<p>详细描述： thead、tfoot 以及 tbody 元素使我们有能力对表格中的行进行分组。当创建某个表格时，也许希望拥有一个标题行，一些带有数据的行，以及位于底部的一个总计行。这种划分使浏览器有能力支持独立于表格标题和页脚的表格正文滚动。当长的表格被打印时，表格的表头和页脚可被打印在包含表格数据的每张页面上。</p>
+<h2 id="给网站状态加图标"><a href="#给网站状态加图标" class="headerlink" title="给网站状态加图标"></a>给网站状态加图标</h2><p>把下面代码添加在meta标签里：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link href=&quot;img/timg.jpg&quot; rel=&quot;shortcut icon&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p><code>rel=&quot;shortcut icon&quot;</code>属性和属性值必须写</p>
+<h1 id="day3"><a href="#day3" class="headerlink" title="day3"></a>day3</h1><h2 id="H5-新的文档声明"><a href="#H5-新的文档声明" class="headerlink" title="H5 新的文档声明"></a>H5 新的文档声明</h2><p>在 HTML 4.01 中，DOCTYPE 声明引用 文档类型定义DTD（Document Type Definition)，因为 HTML 4.01 基于 SGML（标准通用标记语言，是一种定义电子文档结构和描述其内容的国际标准语言；）。DTD 规定了标记语言的规则，这样浏览器才能正确地呈现内容。<br>HTML5 不基于 SGML，所以不需要引用 DTD。</p>
+<font color="#ff0000">提示</font>：请始终向 HTML 文档添加 DOCTYPE 声明，这样浏览器才能获知文档类型。<br><br><font color="deepskyblue">扩展：CSS盒子模型：CSS-标准盒模型 &amp; 怪异盒模型？</font>
+
+<p>CSS中Box model是分为两种:: W3C标准 和 IE标准盒子模型。<br>大多数浏览器采用W3C标准模型，而IE中则采用Microsoft自己的标准。<br>怪异模式是“部分浏览器在支持W3C标准的同时还保留了原来的解析模式”，怪异模式主要表现在IE内核的浏览器。</p>
+<font color="#ff0000"><strong>DOCTYPE缺失则在ie6，ie7，ie8下将会触发怪异模式（quirks 模式）</strong>。</font><br>当不对doctype进行定义时，会触发怪异模式。<br>在标准模式下，一个块的总宽度= width + margin(左右) + padding(左右) + border(左右)<br>在怪异模式下，一个块的总宽度= width + margin(左右)（即width已经包含了padding和border值）<br><br>## H5 的特点<br><br>- 1）更简洁、但是在实际开发中要注意书写规范，利于后期维护<br><br>- 2）标签的语义化<br><br>  <font color="deepskyblue">扩展：语义化的重要性：</font><br>    ① 当页面加载失败的时候，还能够呈现出清晰的结构<br>    ② 有利于SEO优化，利于被搜索引擎收录（即便于网络爬虫的识别）<br>    ③ 在项目开发及维护时，语义化的也很大程度上降低开发难度，节省成本<br><br>- 3）语法更宽松<br><br>- 4）多设备跨平台<br><br>- 5）自适应网页设计<br><br><br><br>## 语义化<br><br>语义化是指用合理HTML标记以及其特有的属性去格式化文档内容。通俗地讲,语义化就是对数据和信息进行处理,使得机器可以理解.<br><br>语义化的(X)HTML文档有助于<strong>提升</strong>你的网站对访客的易用性，比如使用PDA、文字浏览器以及残障人士将从中受益。对于搜索引擎或者爬虫软件来说，则有助于它们建立索引，并可能给予一个较高的权值。<br><br>事实上<a href="https://baike.baidu.com/item/SEO" target="_blank" rel="noopener">SEO</a>最有效的一种办法，就是对网页的HTML结构进行重构，实质上就是语义化。<br><br>## H5新增的语义化标签<br><br><code>header</code>头标签<br><code>nav</code> 导航标签<br><code>article</code>文章标签<br><code>aside</code>侧边栏导航<br><code>footer</code> 页脚<br><code>section</code> 章节、页眉、栏目<br><br>### section<br><br>&gt; 表示内容区块,一般入章节、页眉、页脚或者页面中的其他部分。可以与h1-h6等元素结合起来使用，标示文档的结构<br><br>### article<br><br>&gt; 表示页面中的一块与上下文不相关的独立内容，譬如博客中的一篇文章或者报纸中的一篇文章<br><br>### aside<br><br>&gt; Aside表示acticle元素的内容之外的，与article元素的内容相关的辅助信息。例如：广告、侧边栏。<br><br>### header<br><br>&gt; 表示页面中一个内容区块或者整个页面的标题<br><br>### footer<br><br>&gt; 表示整个页面或者页面中的一个内容区块的脚注。一般来说，他会包含创作者的姓名、创作日期以及创作者联系信息。<br><br>### nav<br><br>&gt; 表示页面中导航链接的部分、① 传统的导航条 ② 腾讯新闻 ③侧边栏导航 ④内业导航    ：百度百科<br><br>### figure<br><br>&gt; 用作文档中插图的图像，一般表示文档主体内容中的一个独立单元。使用figcaption元素为figure元素添加标题。<br>&gt; ◆ figcaption 表示 figure 的标题。从属于 figure ， 并且， figure 中只能放置一个 figcaption。类似自定义列表dl<br><br>### video<br><br>定义视频，比如电影片段或其他视频流<br><br>video src=”路径地址” controls&gt;您的浏览器不支持video&lt;/video&gt;<br><br>video允许有多个source元素，source元素可以连接不同的视频文件，浏览器将使用第一个可识别的格式进行播放<br><br>&lt;source src=”video.ogg” type=”video/ogg”/&gt;&lt;source src=”video.webm”  type=”video/webm”/&gt;<br><br>提示：可以在开始标签和结束标签之间放置文本内容，这样老的浏览器就可以显示出不支持该标签的信息。<br><br>HTML5里video标签支持哪些格式的视频文件？<br><br>Ogg:带有Threora视频编码和Vorbis音频编码的Ogg文件；<br>MPEG4：带有H.264视频编码和AAC音频编码的MPEG4文件；<br>WebM：带有VP8视频编码和Vorbis音频编码的WebM文件<br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Chrome Android 60.X+ 不能自动播放audio音频的解决办法</span><br><span class="line"></span><br><span class="line">目前最新的Chrome Android版本已经是72.X。而Chrome Android等一些浏览器默认限制了自动播放音频视频等，需要用户有点击的动作后才可以播放。这样的原因在于很多用户流量需要付费，而限制了自动播放可以避免用户在不知情的情况下产生高额的流量费用。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">在60.X版本之前，chrome://flags中有一个disable-gesture-requirement-for-media-playback的选项，让用户在浏览器中输入chrome://flags/#disable-gesture-requirement-for-media-playback将该选项应用后即可。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">而从60.X版本开始，这个选项被移除了，取而代之的是一个名为Autoplay policy的选项。我们在浏览器中输入chrome://flags/#autoplay-policy，然后在高亮的选项中，将Default换成No user gesture is required</span><br></pre></td></tr></table></figure><br><br>### embed<br><br>embed标签用于定义嵌套的内容，包括各种媒体，格式可以是midi、wav、AIFF、AU、MP3、Flash等<br><br>### audio<br><br>定义音频，比如音乐或其他音频流<br><br>&lt;audio src=”someaudio.wav”&gt;您的浏览器不支持 audio 标签。&lt;/audio&gt;<br><br>提示：可以在开始标签和结束标签之间放置文本内容，这样老的浏览器就可以显示出不支持该标签的信息。<br><br>### mark<br><br>高亮显示文字，一个比较典型的应用就是在搜索结果中向用户高亮显示搜索关键词。<br><br>### canvas<br><br>表示图形，比如图标和其他图像。这个元素本身没有行为，仅提供一块画布，但它把一个绘图API展现给客户端js，以使脚本能够把想绘制的东西绘制到这块画布上<br>&lt;canvas id=“myCanvas” width=“200” height=“200”&gt;&lt;/canvas&gt;<br><br>### dalalist<br><br>datalist提供一个事先定义好的列表，通过id与input关联，当在input内输入时就会有自动完成（autocomplete）的功能，用户将会看见一个下拉列表供其选择。<br><br>## H5新增的表单元素<br><br>Search/tel/url/email/number/range/color/file/Datetime/date/month/week/time/datetime-local<br><br>### email<br><br>专门用来输入email地址的文本框,如果该文本框中内容不是email地址格式的，则不允许提交。但它不检查email地址是否存在。 具有multiple属性，它允许在该文本框中输入一串以逗号分隔的email地址。<br><br>### url<br><br>url：专门用来输入URL地址的文本框。如果该文本框中内容不是URL地址格式的，则不允许提交。和required属性配合使用。<br><br>### number<br><br>Number：专门用来输入数字的文本框。在提交时会检查其中的内容是否为数字，具有min、max、step的属性。&lt;input  name=“number1”  type=“number”  value=“25”  min=“10”  max=“100”  step=“5” /&gt;<br><br>### range<br><br>是用来只允话输入一段范围内数值的文本框，它具有min属性与max属性，及step属性，可以指定每次拖动的步幅。<br><br>&lt;input  name=“range1” type=“range” value=“25” min=“0”  max=“100”  step=“5”    /&gt;<br>min  最小值<br>max  最大值<br>step  数字间隔<br><br>### date pickers<br><br>拥有多个可供选取日期和时间的新输入类型。 date - 选取日、月、年 <font color="deepskyblue"> <strong>Internet Explorer 或 Firefox 不支持 “month” 元素</strong></font>。<br>month - 选取月、年   <font color="deepskyblue"><strong>Internet Explorer 或 Firefox 不支持 “month” 元素</strong>。</font><br>week - 选取周和年   <font color="deepskyblue"><strong>Internet Explorer 或 Firefox 不支持 “month” 元素</strong>。</font><br>time - 选取时间（小时和分钟）  <font color="deepskyblue"><strong>Internet Explorer 或 Firefox 不支持 “month” 元素</strong>。</font><br>datetime - 选取时间、日、月、年（UTC 时间）<font color="deepskyblue"><strong>Internet Explorer、Firefox 或者 Chrome 不支持 “datetime 元素，Safari 中部分支持。Opera 12 以及更早的版本中完全支持</strong>。</font><br>datetime-local - 选取时间、日、月、年（本地时间）<font color="deepskyblue"><strong>Internet Explorer 或 Firefox 不支持 “month” 元素</strong>。</font>
+
+<h2 id="H5新增的表单验证"><a href="#H5新增的表单验证" class="headerlink" title="H5新增的表单验证"></a>H5新增的表单验证</h2><h3 id="placeholder"><a href="#placeholder" class="headerlink" title="placeholder"></a>placeholder</h3><blockquote>
+<p>placeholder属性：文本框处于未输入状态时文本框中显示的输入提示。</p>
+</blockquote>
+<h3 id="autofocus"><a href="#autofocus" class="headerlink" title="autofocus"></a>autofocus</h3><blockquote>
+<p>autofocus属性：给文本框、选择框、或者按钮控件加上该属性，当打开页面时，该控件自动获得国标焦点，一个页面只能有一个。</p>
+</blockquote>
+<h3 id="required"><a href="#required" class="headerlink" title="required"></a>required</h3><blockquote>
+<p>required属性：验证输入不能为空</p>
+</blockquote>
+<h3 id="list"><a href="#list" class="headerlink" title="list"></a>list</h3><blockquote>
+<p>list属性：结合datalist元素使用</p>
+</blockquote>
+<h3 id="自动验证"><a href="#自动验证" class="headerlink" title="自动验证"></a>自动验证</h3><blockquote>
+<p>min、max、step：为包含数字或日期的 input 类型规定限定（约束）<br>max: 最大值<br>min: 最小值<br>step: 数字间隔</p>
+</blockquote>
+<h3 id="不自动验证"><a href="#不自动验证" class="headerlink" title="不自动验证"></a>不自动验证</h3><blockquote>
+<p>novalidate 属性规定当提交表单时不对其进行验证。给form添加。</p>
+</blockquote>
+<h1 id="day4"><a href="#day4" class="headerlink" title="day4"></a>day4</h1><h2 id="CSS3简介"><a href="#CSS3简介" class="headerlink" title="CSS3简介"></a>CSS3简介</h2><p>如同人类的的进化一样，CSS3 是 CSS2 的“进化”版本，在 CSS2 基础上，增强或新增了许多特性， 弥补了CSS2的众多不足之处，使得Web开发变得更为高效和便捷。</p>
+<h3 id="CSS3-现状"><a href="#CSS3-现状" class="headerlink" title="CSS3 现状"></a>CSS3 现状</h3><p>1、浏览器支持程度差，需要添加私有前缀</p>
+<p>2、移动端支持优于PC端</p>
+<p>3、不断改进中</p>
+<p>4、应用相对广泛</p>
+<h3 id="如何对待"><a href="#如何对待" class="headerlink" title="如何对待"></a>如何对待</h3><p>1、坚持<font color="#ff0000">渐进增强</font>原则</p>
+<p>2、考虑用户群体</p>
+<p>3、遵照产品的方案</p>
+<p>4、<font color="#ff0000">听Boss的</font></p>
+<h2 id="渐进增强和优雅降级"><a href="#渐进增强和优雅降级" class="headerlink" title="渐进增强和优雅降级"></a>渐进增强和优雅降级</h2><h3 id="渐进增强"><a href="#渐进增强" class="headerlink" title="渐进增强"></a>渐进增强</h3><p>针对低版本浏览器进行构建页面，<font color="#ff0000">保证最基本的功能</font>，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。</p>
+<h3 id="优雅降级"><a href="#优雅降级" class="headerlink" title="优雅降级"></a>优雅降级</h3><p>一开始就构建完整的功能，然后再针对低版本浏览器进行兼容。</p>
+<font color="#ff0000"><strong>区别</strong></font>：优雅降级是从复杂的现状开始，并试图减少用户体验的供给，而渐进增强则是从一个非常基础的，能够起作用的版本开始，并不断扩充，以适应未来环境的需要。降级（功能衰减）意味着往回看；而渐进增强则意味着朝前看，同时保证其根基处于安全地带。<br><br>## CSS3选择器<br><br>###  属性选择器<br><br>| <strong>选择器</strong>        | <strong>示例</strong> | <strong>含义</strong>                            |<br>| —————– | ——– | ———————————– |<br>| <strong>E[attr]</strong>       |          | 存在attr属性即可                    |<br>| <strong>E[attr=val]</strong>   |          | 属性值完全等于val                   |<br>| <strong>E[attr*=val]</strong> |          | 属性值里包含val字符并且在“任意”位置 |<br>| <strong>E[attr^=val]</strong>  |          | 属性值里包含val字符并且在“开始”位置 |<br>| <strong>E[attr$=val]</strong>  |          | 属性值里包含val字符并且在“结束”位置 |<br><br>### 伪类选择器<br><br>除了以前学过的 <code>:link</code>、<code>:active</code>、<code>:visited</code>、<code>:hover</code>，CSS3又新增了其它的伪类选择器。<br><br>#### 结构(位置)伪类<br><br>以某元素（E）相对于其父元素或兄弟元素的位置来获取无素；<br><br>| <strong>选择器</strong>              | <strong>示例</strong> | <strong>含义</strong>                        |<br>| ———————– | ——– | ——————————- |<br>| <strong>E:first-child</strong>       |          | 其父元素的第1个子元素           |<br>| <strong>E:last-child</strong>        |          | 其父元素的最后1个子元素         |<br>| <strong>E:nth-child(n)</strong>      |          | 其父元素的第n个子元素           |<br>| <strong>E:nth-last-child(n)</strong> |          | 其父元素的第n个子元素（倒着数） |<br><br><font color="#ff0000"><strong>n遵循线性变化，其取值0、1、2、3、4、…</strong> </font>
+
+<p>n可是多种形式：<code>nth-child(2n+0)</code>、<code>nth-child(2n+1)</code>、<code>nth-child(-1n+3)</code>等；</p>
+<p><strong>注</strong>：指E元素的父元素，并对应位置的子元素必须是E</p>
+<h4 id="空伪类"><a href="#空伪类" class="headerlink" title="空伪类"></a>空伪类</h4><p><code>E:empty</code> 选中没有任何子节点的E元素；（使用不是非常广泛）</p>
+<h4 id="目标伪类"><a href="#目标伪类" class="headerlink" title="目标伪类"></a>目标伪类</h4><p><code>E:target</code> 结合锚点进行使用，处于当前锚点的元素会被选中；</p>
+<h4 id="排除伪类"><a href="#排除伪类" class="headerlink" title="排除伪类"></a>排除伪类</h4><p><code>E:not(selector)</code> 除<code>selector</code>（任意选择器）外的元素会被选中；</p>
+<h3 id="伪元素选择器"><a href="#伪元素选择器" class="headerlink" title="伪元素选择器"></a>伪元素选择器</h3><p>1、<code>E::first-letter</code>文本的第一个单词或字（如中文、日文、韩文等）</p>
+<p>2、<code>E::first-line</code> 文本第一行</p>
+<p>3、<code>E::selection</code> 可改变选中文本的样式；</p>
+<p>4、<code>E::before</code>和<code>E::after</code></p>
+<p>在E元素内部的开始位置和结束位创建一个元素，该元素为行内元素，且必须要结合<code>content</code>属性使用。</p>
+<p><code>E:after</code>、<code>E:before</code>在旧版本里是伪元素，CSS3的规范里<code>:</code>用来表示伪类，<code>::</code>用来表示伪元素，但是在高版本浏览器下E:after、E:before会被自动识别为E::after、E::before，这样做的目的是用来做<font color="#ff0000"><strong>兼容处理</strong></font>。</p>
+<font color="#ff0000"><strong>“:” 与 “::” 区别在于区分伪类和伪元素</strong></font>
+
+<h3 id="层次选择器"><a href="#层次选择器" class="headerlink" title="层次选择器"></a>层次选择器</h3><h4 id="后代选择器-（-E-F-）"><a href="#后代选择器-（-E-F-）" class="headerlink" title="后代选择器 （ E  F ）"></a>后代选择器 （ E  F ）</h4><p>后代选择器也被称作包含选择器,所起作用就是可以选择某元素的后代元素，比如说:E F，前面E为祖先元素，Ｆ为后代元素，所表达的意思就是选择了Ｅ元素的所有后代Ｆ元素，请注意他们之间需要一个空格隔开。这里Ｆ不管是E元素的子元素或者是孙元素或者是更深层次的关系，都将被选中，换句话说，不论Ｆ在Ｅ中有多少层关系，都将被选中</p>
+<font color="#ff0000">所有浏览器都支的后代选择器。</font>
+
+<h4 id="子元素选择器（-E-gt-F-）"><a href="#子元素选择器（-E-gt-F-）" class="headerlink" title="子元素选择器（ E &gt; F ）"></a>子元素选择器（ E &gt; F ）</h4><p>子元素选择器只能选择某元素的子元素，其中E为父元素，而F为子元素，其中E&gt;F所表示的是选择了Ｅ元素下的所有子元素Ｆ。这和后代选择器（Ｅ Ｆ）不一样，在后代选择器中Ｆ是Ｅ的后代元素，而子元素选择器Ｅ &gt; F，其中Ｆ仅仅是Ｅ的子元素而以。</p>
+<font color="#ff0000">IE6不支持子元素选择器。</font>
+
+<h4 id="相邻兄弟元素选择器-（-E-F-）"><a href="#相邻兄弟元素选择器-（-E-F-）" class="headerlink" title="相邻兄弟元素选择器 （ E + F ）"></a>相邻兄弟元素选择器 （ E + F ）</h4><p>相邻兄弟选择器可以选中紧跟在另一元素后的元素。<strong>不能选中被隔开的元素</strong>。<br><code>h1 + p {background: green;color: yellow; border: 1px solid #ccc;}</code><br>IE6不支持这个选择器</p>
+<h4 id="通用兄弟选择器-E-F"><a href="#通用兄弟选择器-E-F" class="headerlink" title="通用兄弟选择器 ( E ~ F )"></a>通用兄弟选择器 ( E ~ F )</h4><p>通用兄弟元素选择器：给指定选择器后面的所有选择器选中的所有标签加样式。无论后面元素有没有被隔开都可以选中。</p>
+<h2 id="拓展-补充-吧啦啦啦"><a href="#拓展-补充-吧啦啦啦" class="headerlink" title="拓展/补充/吧啦啦啦"></a>拓展/补充/吧啦啦啦</h2><p>css3新增规定，一个冒号: 代表伪类选择器，两个冒号::代表伪元素选择器。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>ikaros</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="http://ikaros.ml/2019/03/28/h5-3/" title="记录我的大前端修行3.1">http://ikaros.ml/2019/03/28/h5-3/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/html5/" rel="tag"># html5</a>
+          
+            <a href="/tags/css3/" rel="tag"># css3</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/22/ikaorome/" rel="next" title="家有ikaros初成长">
+                <i class="fa fa-chevron-left"></i> 家有ikaros初成长
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/Misaka.png" alt="ikaros">
+            
+              <p class="site-author-name" itemprop="name">ikaros</p>
+              <div class="site-description motion-element" itemprop="description">like sunday like rain like apple and cinnamon</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/ikarosyu" title="GitHub &rarr; https://github.com/ikarosyu" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://ikarosyu@gmail.com" title="E-Mail &rarr; https://ikarosyu@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://twitter.com/ikarosyu" title="Twitter &rarr; https://twitter.com/ikarosyu" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://steamcommunity.com/id/ikarosyu/" title="steam &rarr; https://steamcommunity.com/id/ikarosyu/" rel="noopener" target="_blank"><i class="fa fa-fw fa-steam"></i>steam</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://weibo.com/3024293020/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" title="Weibo &rarr; https://weibo.com/3024293020/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="http://www.zhihu.com/people/ikaros-48?utm_source=qq&utm_medium=social&utm_oi=740688299089199104" title="知乎 &rarr; http://www.zhihu.com/people/ikaros-48?utm_source=qq&utm_medium=social&utm_oi=740688299089199104" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>知乎</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="/assets/qq.jpg" title="QQ &rarr; /assets/qq.jpg"><i class="fa fa-fw fa-qq"></i>QQ</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="/assets/wechat.png" title="Wechat &rarr; /assets/wechat.png"><i class="fa fa-fw fa-wechat"></i>Wechat</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://ikaros149.lofter.com/" title="http://ikaros149.lofter.com/" rel="noopener" target="_blank">ikarosyu</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://sakurabaka.lofter.com/" title="http://sakurabaka.lofter.com/" rel="noopener" target="_blank">sukura</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="//www.google.com" title="//www.google.com">google</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#day1"><span class="nav-number">1.</span> <span class="nav-text">day1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#宽高自适应的概念和使用"><span class="nav-number">1.1.</span> <span class="nav-text">宽高自适应的概念和使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最小高度"><span class="nav-number">1.2.</span> <span class="nav-text">最小高度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过滤器的使用"><span class="nav-number">1.3.</span> <span class="nav-text">过滤器的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下划线属性过滤器"><span class="nav-number">1.3.1.</span> <span class="nav-text">下划线属性过滤器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#important-关键字过滤器"><span class="nav-number">1.3.2.</span> <span class="nav-text">!important 关键字过滤器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最小高度和高度自适应引发的兼容问题"><span class="nav-number">1.4.</span> <span class="nav-text">最小高度和高度自适应引发的兼容问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#伪对象选择符"><span class="nav-number">1.5.</span> <span class="nav-text">伪对象选择符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自适应窗口-一屏页面的书写"><span class="nav-number">1.6.</span> <span class="nav-text">自适应窗口(一屏页面的书写)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#day2"><span class="nav-number">2.</span> <span class="nav-text">day2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#表单标签及属性补充"><span class="nav-number">2.1.</span> <span class="nav-text">表单标签及属性补充</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#表单字段集"><span class="nav-number">2.1.1.</span> <span class="nav-text">表单字段集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字段级标题"><span class="nav-number">2.1.2.</span> <span class="nav-text">字段级标题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提示信息标签"><span class="nav-number">2.1.3.</span> <span class="nav-text">提示信息标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上传文本框"><span class="nav-number">2.1.4.</span> <span class="nav-text">上传文本框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图像域"><span class="nav-number">2.1.5.</span> <span class="nav-text">图像域</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表格标签及属性补充"><span class="nav-number">2.2.</span> <span class="nav-text">表格标签及属性补充</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单元格间距-border-spacing"><span class="nav-number">2.2.1.</span> <span class="nav-text">单元格间距 border-spacing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合并相邻单元格边框-border-collapse"><span class="nav-number">2.2.2.</span> <span class="nav-text">合并相邻单元格边框 border-collapse</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无内容-empty-cells"><span class="nav-number">2.2.3.</span> <span class="nav-text">无内容 empty-cells</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义表格布局-table-layout"><span class="nav-number">2.2.4.</span> <span class="nav-text">定义表格布局 table-layout</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#隔行变色"><span class="nav-number">2.2.5.</span> <span class="nav-text">隔行变色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表格标题"><span class="nav-number">2.2.6.</span> <span class="nav-text">表格标题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML-重要属性"><span class="nav-number">2.2.7.</span> <span class="nav-text">HTML 重要属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据列分组"><span class="nav-number">2.2.8.</span> <span class="nav-text">数据列分组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据行分组"><span class="nav-number">2.2.9.</span> <span class="nav-text">数据行分组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#给网站状态加图标"><span class="nav-number">2.3.</span> <span class="nav-text">给网站状态加图标</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#day3"><span class="nav-number">3.</span> <span class="nav-text">day3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#H5-新的文档声明"><span class="nav-number">3.1.</span> <span class="nav-text">H5 新的文档声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#H5新增的表单验证"><span class="nav-number">3.2.</span> <span class="nav-text">H5新增的表单验证</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#placeholder"><span class="nav-number">3.2.1.</span> <span class="nav-text">placeholder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#autofocus"><span class="nav-number">3.2.2.</span> <span class="nav-text">autofocus</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#required"><span class="nav-number">3.2.3.</span> <span class="nav-text">required</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list"><span class="nav-number">3.2.4.</span> <span class="nav-text">list</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动验证"><span class="nav-number">3.2.5.</span> <span class="nav-text">自动验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不自动验证"><span class="nav-number">3.2.6.</span> <span class="nav-text">不自动验证</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#day4"><span class="nav-number">4.</span> <span class="nav-text">day4</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3简介"><span class="nav-number">4.1.</span> <span class="nav-text">CSS3简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3-现状"><span class="nav-number">4.1.1.</span> <span class="nav-text">CSS3 现状</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何对待"><span class="nav-number">4.1.2.</span> <span class="nav-text">如何对待</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#渐进增强和优雅降级"><span class="nav-number">4.2.</span> <span class="nav-text">渐进增强和优雅降级</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#渐进增强"><span class="nav-number">4.2.1.</span> <span class="nav-text">渐进增强</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优雅降级"><span class="nav-number">4.2.2.</span> <span class="nav-text">优雅降级</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#空伪类"><span class="nav-number">4.2.2.1.</span> <span class="nav-text">空伪类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#目标伪类"><span class="nav-number">4.2.2.2.</span> <span class="nav-text">目标伪类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#排除伪类"><span class="nav-number">4.2.2.3.</span> <span class="nav-text">排除伪类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#伪元素选择器"><span class="nav-number">4.2.3.</span> <span class="nav-text">伪元素选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#层次选择器"><span class="nav-number">4.2.4.</span> <span class="nav-text">层次选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#后代选择器-（-E-F-）"><span class="nav-number">4.2.4.1.</span> <span class="nav-text">后代选择器 （ E  F ）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#子元素选择器（-E-gt-F-）"><span class="nav-number">4.2.4.2.</span> <span class="nav-text">子元素选择器（ E &gt; F ）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#相邻兄弟元素选择器-（-E-F-）"><span class="nav-number">4.2.4.3.</span> <span class="nav-text">相邻兄弟元素选择器 （ E + F ）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通用兄弟选择器-E-F"><span class="nav-number">4.2.4.4.</span> <span class="nav-text">通用兄弟选择器 ( E ~ F )</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拓展-补充-吧啦啦啦"><span class="nav-number">4.3.</span> <span class="nav-text">拓展/补充/吧啦啦啦</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ikaros</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数">45k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    
+    <span title="站点阅读时长">41 分钟</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.0.1</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      网站总访客数 <span class="busuanzi-value" id="busuanzi_value_site_uv"></span> 人次. |
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      &nbsp;<i class="fa fa-eye"></i>
+      总访问量 <span class="busuanzi-value" id="busuanzi_value_site_pv"></span> 次.
+    </span>
+
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=7.0.1"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=7.0.1"></script>
+
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="/js/src/next-boot.js?v=7.0.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  $('.highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+        if (result) $(this).text('复制成功');
+        else $(this).text('复制失败');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('复制');
+      }, 300);
+    }).append(e);
+  })
+</script>
+
+
+  
+
+  
+
+</body>
+</html>

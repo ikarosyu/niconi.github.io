@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ikaros.ml/"/>
-  <updated>2019-03-22T08:48:27.890Z</updated>
+  <updated>2019-03-28T04:29:34.827Z</updated>
   <id>http://ikaros.ml/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>记录我的大前端修行3.1</title>
+    <link href="http://ikaros.ml/2019/03/28/h5-3/"/>
+    <id>http://ikaros.ml/2019/03/28/h5-3/</id>
+    <published>2019-03-28T04:28:17.000Z</published>
+    <updated>2019-03-28T04:29:34.827Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;day1&quot;&gt;&lt;a href=&quot;#day1&quot; class=&quot;headerlink&quot; title=&quot;day1&quot;&gt;&lt;/a&gt;day1&lt;/h1&gt;&lt;h2 id=&quot;宽高自适应的概念和使用&quot;&gt;&lt;a href=&quot;#宽高自适应的概念和使用&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="大前端" scheme="http://ikaros.ml/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="html5" scheme="http://ikaros.ml/tags/html5/"/>
+    
+      <category term="css3" scheme="http://ikaros.ml/tags/css3/"/>
+    
+  </entry>
   
   <entry>
     <title>家有ikaros初成长</title>
@@ -213,9 +241,9 @@
       <category term="转载" scheme="http://ikaros.ml/categories/%E6%97%A5%E5%B8%B8/%E8%BD%AC%E8%BD%BD/"/>
     
     
-      <category term="share" scheme="http://ikaros.ml/tags/share/"/>
-    
       <category term="thoughts" scheme="http://ikaros.ml/tags/thoughts/"/>
+    
+      <category term="share" scheme="http://ikaros.ml/tags/share/"/>
     
       <category term="emotion" scheme="http://ikaros.ml/tags/emotion/"/>
     
