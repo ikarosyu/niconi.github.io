@@ -63,9 +63,9 @@
       <category term="日常" scheme="http://ikaros.ml/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
-      <category term="ikaros" scheme="http://ikaros.ml/tags/ikaros/"/>
-    
       <category term="thoughts" scheme="http://ikaros.ml/tags/thoughts/"/>
+    
+      <category term="ikaros" scheme="http://ikaros.ml/tags/ikaros/"/>
     
   </entry>
   
