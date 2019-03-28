@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ikaros.ml/"/>
-  <updated>2019-03-28T04:29:34.827Z</updated>
+  <updated>2019-03-28T05:33:18.423Z</updated>
   <id>http://ikaros.ml/</id>
   
   <author>
@@ -21,17 +21,16 @@
     <link href="http://ikaros.ml/2019/03/28/h5-3/"/>
     <id>http://ikaros.ml/2019/03/28/h5-3/</id>
     <published>2019-03-28T04:28:17.000Z</published>
-    <updated>2019-03-28T04:29:34.827Z</updated>
+    <updated>2019-03-28T05:33:18.423Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h1 id=&quot;day1&quot;&gt;&lt;a href=&quot;#day1&quot; class=&quot;headerlink&quot; title=&quot;day1&quot;&gt;&lt;/a&gt;day1&lt;/h1&gt;&lt;h2 id=&quot;宽高自适应的概念和使用&quot;&gt;&lt;a href=&quot;#宽高自适应的概念和使用&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;h1 id=&quot;day1&quot;&gt;&lt;a href=&quot;#day1&quot; class=&quot;headerlink&quot; title=&quot;day1&quot;&gt;&lt;/a&gt;day1&lt;/h1&gt;&lt;h2 id=&quot;宽高自适应的概念和使用&quot;&gt;&lt;a href=&quot;#宽高自适应的概念和使用&quot; class=&quot;headerlink&quot; title=&quot;宽高自适应的概念和使用&quot;&gt;&lt;/a&gt;宽高自适应的概念和使用&lt;/h2&gt;&lt;p&gt;网页布局中经常要定义元素的宽和高。但很多时候我们希望元素的大小能够根据窗口或子元素自动调整，这就是自适应&lt;/p&gt;
+&lt;p&gt;元素自适应在网页布局中非常重要，它能够使网页显示更灵活，可以适应在不同设备、不同窗口和不同分辨率下显示。&lt;/p&gt;
+&lt;p&gt;(1)宽度自适应&lt;/p&gt;
+&lt;p&gt;元素宽度设置为100%。（块元素宽度默认为100%） width:100%;&lt;/p&gt;
+&lt;p&gt;(2) 高度自适应&lt;/p&gt;
+&lt;p&gt;元素{height:auto;}/高度不写&lt;/p&gt;
     
     </summary>
     
@@ -49,7 +48,7 @@
     <link href="http://ikaros.ml/2019/03/22/ikaorome/"/>
     <id>http://ikaros.ml/2019/03/22/ikaorome/</id>
     <published>2019-03-22T08:29:13.000Z</published>
-    <updated>2019-03-22T08:48:27.890Z</updated>
+    <updated>2019-03-28T05:37:49.737Z</updated>
     
     <summary type="html">
     
@@ -241,9 +240,9 @@
       <category term="转载" scheme="http://ikaros.ml/categories/%E6%97%A5%E5%B8%B8/%E8%BD%AC%E8%BD%BD/"/>
     
     
-      <category term="thoughts" scheme="http://ikaros.ml/tags/thoughts/"/>
-    
       <category term="share" scheme="http://ikaros.ml/tags/share/"/>
+    
+      <category term="thoughts" scheme="http://ikaros.ml/tags/thoughts/"/>
     
       <category term="emotion" scheme="http://ikaros.ml/tags/emotion/"/>
     
