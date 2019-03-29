@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ikaros.ml/"/>
-  <updated>2019-03-28T05:33:18.423Z</updated>
+  <updated>2019-03-29T05:56:59.894Z</updated>
   <id>http://ikaros.ml/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我的先生</title>
+    <link href="http://ikaros.ml/2019/03/29/zhuanzai2/"/>
+    <id>http://ikaros.ml/2019/03/29/zhuanzai2/</id>
+    <published>2019-03-29T05:48:48.000Z</published>
+    <updated>2019-03-29T05:56:59.894Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;不知为什么，近年来我的先生对酒的喜爱近乎偏执。在我们的孩子还未降生时，他从来都是滴酒不沾，将别人递来的酒杯婉言拒绝的人。可能是孩子的到来使他有了前所未有的压力和紧迫感的缘故，也可能是他意外发现酒的美好与醉人之处的原因，现在他每隔一两个星期就会在外面喝许多酒，然后醉醺醺回到家里，瘫软无力地倒在沙发上凝视头上的灯，直到&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="短小说" scheme="http://ikaros.ml/categories/%E7%9F%AD%E5%B0%8F%E8%AF%B4/"/>
+    
+    
+      <category term="thoughts" scheme="http://ikaros.ml/tags/thoughts/"/>
+    
+      <category term="emotion" scheme="http://ikaros.ml/tags/emotion/"/>
+    
+  </entry>
   
   <entry>
     <title>记录我的大前端修行3.1</title>
@@ -63,9 +85,9 @@
       <category term="日常" scheme="http://ikaros.ml/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
-      <category term="thoughts" scheme="http://ikaros.ml/tags/thoughts/"/>
-    
       <category term="ikaros" scheme="http://ikaros.ml/tags/ikaros/"/>
+    
+      <category term="thoughts" scheme="http://ikaros.ml/tags/thoughts/"/>
     
   </entry>
   
